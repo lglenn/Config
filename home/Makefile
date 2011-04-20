@@ -1,2 +1,2 @@
 all:
-	tar cvf - . | (cd /Users/larry; tar xvf -)
+	tar cvf - --exclude 'Makefile*' --exclude '*~' . | (cd /Users/larry; tar xvf -)
