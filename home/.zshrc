@@ -112,3 +112,10 @@ limit coredumpsize 0
 alias goop="ssh goop"
 alias myth="ssh myth"
 
+# OS-Specific functionality.
+case `uname` in
+    Darwin)
+	;;
+    Linux)
+	;;
+esac
