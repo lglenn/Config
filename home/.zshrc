@@ -43,11 +43,6 @@ compctl -S "." -q -K findpackage javap
 compctl -S "." -q -K findpackage jdb
 compctl -K nswhois whois
 
-function nswhois() {
-    set -A reply;
-    reply=("$1@whois.networksolutions.com");
-}
-
 # Complete java invocations by converting a.b.c to a/b/c, 
 # looking for completions in CLASSPATH, and then converting 
 # the resulting filename back to a Java package and/or class
@@ -79,22 +74,6 @@ function findpackage() {
   return;
 }
 
-chpwd() {
-	[[ -t 1 ]] || return
-	case $TERM in
-		sun-cmd)
-			print -Pn "\e]1%~\e\\"
-			;;
-		rxvt | kterm | xterm)
-			print -Pn "\e]2;%m:%~\a"
-			;;
-	esac
-}	
-
-killit() {
-	ps ax | grep $1 | awk '{print $1}' | xargs kill -9
-}
-			
 append_path() {
 	found="";
 	for i in $path
@@ -113,6 +92,8 @@ append_path() {
 	fi
 }
 
+# Time tracking functions. Type 'i' to mark yourself as on the clock, 'o' as off. 
+# 'b' followed by a number of minutes to record a break.
 i () { 
 	date "+%D %T in $*" >>$HOME/t
 }
