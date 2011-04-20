@@ -22,10 +22,10 @@ setopt GLOB_SUBST;
 
 alias dh='dirs -v'
 
-ftphosts=(ftp.gnu.ai.mit.edu);
+ftphosts=();
 telnethosts=(localhost)
-pinghosts=(localhost)
-sshhosts=(goop.metacism.net 192.168.1.119);
+pinghosts=(localhost google.com)
+sshhosts=(goop.metacism.net);
 
 compctl -k cvscommands + -f cvs
 compctl -j -P "%" kill disown bg fg
