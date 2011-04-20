@@ -92,25 +92,6 @@ append_path() {
 	fi
 }
 
-# Time tracking functions. Type 'i' to mark yourself as on the clock, 'o' as off. 
-# 'b' followed by a number of minutes to record a break.
-i () { 
-	date "+%D %T in $*" >>$HOME/t
-}
-
-o () { 
-	date "+%D %T out $*" >>$HOME/t
-}
-
-b () { 
-	if [ ! "$1" ]
-	then
-		echo "b requires a break length parameter";
-	else 
-		date "+%D %T break $*" >>$HOME/t
-	fi
-}
-
 #
 # umask 
 #
