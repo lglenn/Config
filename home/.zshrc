@@ -1,5 +1,5 @@
-# Uncommment this line for vi binding in line editor
-#bindkey -v
+# Set emacs key bindings in line editor
+bindkey -e
 
 stty intr ^c
 
