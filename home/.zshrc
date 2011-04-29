@@ -25,7 +25,7 @@ alias dh='dirs -v'
 ftphosts=();
 telnethosts=(localhost)
 pinghosts=(localhost google.com)
-sshhosts=(goop.metacism.net sd1pbk01lx.saksdirect.com);
+sshhosts=(goop.metacism.net sd1pbk01lx.saksdirect.com sd1pzp01lx.saksdirect.com sd1pzp02lx.saksdirect.com sd1pzp03lx.saksdirect.com sd1pzp04lx.saksdirect.com sd1pzp05lx.saksdirect.com sd1pzp06lx.saksdirect.com sd1pzp07lx.saksdirect.com sd1pzp08lx.saksdirect.com);
 
 compctl -k cvscommands + -f cvs
 compctl -j -P "%" kill disown bg fg
