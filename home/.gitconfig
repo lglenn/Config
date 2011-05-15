@@ -1,0 +1,12 @@
+[user]
+	name = Larry Glenn
+	email = yrral.glenn@gmail.com
+[color]
+	ui = auto
+[alias]
+	ci = commit
+	co = checkout
+	st = status
+	br = branch
+[core]
+	excludesfile = /Users/larry/.gitignore
