@@ -1,0 +1,6 @@
+append_path /sw/bin
+
+# "local" to the MacBook
+alias goop="ssh goop"
+alias myth="ssh myth"
+
