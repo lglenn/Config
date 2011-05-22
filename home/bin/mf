@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ffoo=$HOME/ffoo
+
+if [ ! -e $ffoo ]
+then
+	echo "Making ffoo...";
+	mkdir $ffoo;
+fi
