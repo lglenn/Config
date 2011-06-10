@@ -13,11 +13,11 @@
 (add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
 
 ;;; YAML Mode
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-(add-hook 'yaml-mode-hook
-	  '(lambda ()
-	     (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+; (require 'yaml-mode)
+; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+; (add-hook 'yaml-mode-hook
+;	  '(lambda ()
+;	     (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
 ; loads ruby mode when a .rb file is opened.
 (autoload 'ruby-mode "ruby-mode" "Major mode for editing ruby scripts." t)
