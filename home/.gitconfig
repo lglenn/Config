@@ -8,5 +8,6 @@
 	co = checkout
 	st = status
 	br = branch
+	l = log --pretty='format:%Cred%h %Cblue%ai %Cgreen%d%n%Creset%s%n'
 [core]
 	excludesfile = /Users/larry/.gitignore
