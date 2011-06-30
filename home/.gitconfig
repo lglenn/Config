@@ -11,5 +11,9 @@
 	br = branch
 	ai = add -i
 	l = log --pretty='format:%Cred%h %Cblue%ai %Cgreen%d%n%Creset%s%n'
+	d = diff
+	ds = diff --stat
+	dc = diff --cached
+	dcs = diff --cached --stat
 [core]
 	excludesfile = /Users/larry/.gitignore
