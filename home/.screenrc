@@ -10,3 +10,6 @@ bind F eval "caption always"    "hardstatus alwayslastline"
 caption     always        "%{+b rk}%H%{gk} |%c %{yk}%m/%d/%Y | %72=Load: %l %{wk}"
 hardstatus alwayslastline "%?%{yk}%-Lw%?%{wb}%n*%f %t%?(%u)%?%?%{yk}%+Lw%?"
 
+#
+# Keep an actually usable amount of data in the scrollback buffer
+defscrollback 5000
