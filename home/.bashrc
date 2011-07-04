@@ -20,3 +20,5 @@ export EC2_PRIVATE_KEY="/Users/larry/.ec2/pk-EBCQSZJLWKANNTFFUIEO77TZTUY5CSSO.pe
 # Git
 alias g=git
 
+# Projects
+alias bella="cd $HOME/Projects/Belladonna"
