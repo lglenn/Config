@@ -17,3 +17,6 @@ export PATH=$PATH:$EC2_HOME/bin;
 export EC2_CERT="/Users/larry/.ec2/cert-EBCQSZJLWKANNTFFUIEO77TZTUY5CSSO.pem";
 export EC2_PRIVATE_KEY="/Users/larry/.ec2/pk-EBCQSZJLWKANNTFFUIEO77TZTUY5CSSO.pem";
 
+# Git
+alias g=git
+
