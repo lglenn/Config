@@ -22,3 +22,6 @@ alias g=git
 
 # Projects
 alias bella="cd $HOME/Projects/Belladonna"
+
+# Shortcuts
+alias cl=clear
