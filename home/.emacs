@@ -19,6 +19,11 @@
 ;	  '(lambda ()
 ;	     (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
+;;; CSS Mode
+(autoload 'css-mode "css-mode-simple")
+(setq auto-mode-alist       
+     (cons '("\\.css\\'" . css-mode) auto-mode-alist))
+
 ; loads ruby mode when a .rb file is opened.
 (autoload 'ruby-mode "ruby-mode" "Major mode for editing ruby scripts." t)
 (setq auto-mode-alist  (cons '(".rb$" . ruby-mode) auto-mode-alist))
