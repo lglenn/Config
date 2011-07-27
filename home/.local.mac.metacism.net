@@ -1,14 +1,6 @@
-append_path /sw/bin
-
 # "local" to the MacBook
 alias goop="ssh goop"
 alias myth="ssh myth"
-
-# Package management...
-export PATH=$PATH:/sw/bin
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
 # Amazon EC2
 export JAVA_HOME=/Library/Java/Home

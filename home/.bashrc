@@ -3,10 +3,6 @@ export EDITOR=vi;
 export PS1="\h:\w> ";
 export PS2="> ";
 
-# Package management...
-export PATH=$PATH:/opt/local/bin
-export MANPATH=$MANPATH:/opt/local/man
-
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
