@@ -10,7 +10,7 @@ dotfiles = BASH_FILES + ZSH_FILES + EMACS_FILES + GIT_FILES + SCREEN_FILES
 
 dotfiles.each do |dotfile|
   target = "#{HOME}/#{dotfile}"
-  src = "./HOME/#{dotfile}"
+  src = "./home/#{dotfile}"
   task dotfile => target
   file target => src do
     sh "cp #{src} #{target}"
@@ -26,7 +26,12 @@ desc "bash config"
 task :bash => BASH_FILES
 
 desc "emacs config"
-task :emacs => EMACS_FILES
+task :emacs => EMACS_FILES do
+  mkdir_p "#{HOME}/.emacs.d//site-lisp"
+  FileList['./home/.emacs.d/site-lisp/*el'].each do |file|
+    sh "cp #{file} #{HOME}/.emacs.d/site-lisp/"
+  end
+end
 
 desc "git config"
 task :git => GIT_FILES
