@@ -103,7 +103,7 @@ umask 002
 alias zsh='exec zsh'
 
 export PROMPT='%(#.%B%t:%m:%~#%b.%m:%~>) '
-export HISTFILE=/tmp/history
+export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=1000
 
 limit coredumpsize 0
