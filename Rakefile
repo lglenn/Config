@@ -17,7 +17,7 @@ dotfiles.each do |dotfile|
   end
 end
 
-task :default => "#{HOME}/.zshrc"
+task :default => [:zsh, :bash, :emacs, :git, :screen]
 
 desc "zsh config"
 task :zsh => ZSH_FILES
