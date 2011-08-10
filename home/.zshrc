@@ -108,10 +108,6 @@ export HISTSIZE=1000
 
 limit coredumpsize 0
 
-# "local" to the MacBook
-alias goop="ssh goop"
-alias myth="ssh myth"
-
 # OS-Specific functionality.
 case `uname` in
     Darwin)
