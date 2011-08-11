@@ -108,6 +108,11 @@ alias zsh='exec zsh'
 autoload -U colors && colors
 export PROMPT="%(#.%{$fg[red]%}.%{$fg[green]%})%n:%?:%b:%{$fg[yellow]%}%~%{$fg[green]%}> %{$reset_color%}"
 
+#
+# editor
+#
+export EDITOR=vi
+
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=1000
 
