@@ -102,7 +102,12 @@ umask 002
 #
 alias zsh='exec zsh'
 
-export PROMPT='%(#.%B%t:%m:%~#%b.%m:%~>) '
+#
+# prompt
+#
+autoload -U colors && colors
+export PROMPT="%(#.%{$fg[red]%}.%{$fg[green]%})%n:%?:%b:%{$fg[yellow]%}%~%{$fg[green]%}> %{$reset_color%}"
+
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=1000
 
