@@ -121,6 +121,10 @@ limit coredumpsize 0
 # OS-Specific functionality.
 case `uname` in
     Darwin)
+	if [ -f "$HOME/.java_setup" ]
+	then
+	    . $HOME/.java_setup
+	fi
 	;;
     Linux)
 	;;
