@@ -13,3 +13,6 @@ set shiftwidth=4
 syntax enable
 set background=dark
 colorscheme solarized
+
+" Soft wrap
+set wrap linebreak textwidth=0
