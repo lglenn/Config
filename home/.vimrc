@@ -16,3 +16,9 @@ colorscheme solarized
 
 " Soft wrap
 set wrap linebreak textwidth=0
+
+" Map window movement keys to ctrl-cursor
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
