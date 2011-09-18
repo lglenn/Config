@@ -26,6 +26,14 @@ task :zsh => ZSH_FILES
 desc "bash config"
 task :bash => BASH_FILES
 
+desc "vim config"
+task :vim => VIM_FILES do
+  mkdir_p "#{HOME}/.vim/colors"
+  FileList['./home/.vim/colors/*.vim'].each do |file|
+    sh "cp #{file} #{HOME}/.vim/colors"
+  end
+end
+
 desc "emacs config"
 task :emacs => EMACS_FILES do
   mkdir_p "#{HOME}/.emacs.d//site-lisp"
