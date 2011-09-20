@@ -22,3 +22,7 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Don't complain when moving away from a dirty buffer, just create 
+" a hidden one
+set hidden
