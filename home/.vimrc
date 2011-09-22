@@ -26,3 +26,20 @@ map <C-l> <C-w>l
 " Don't complain when moving away from a dirty buffer, just create 
 " a hidden one
 set hidden
+
+"
+" Invisisbles
+
+" Toggle display of invisible chars with \l
+nmap <leader>l :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
+
+"
+" Filetype stuff
+if has("autocmd") 
+    " Enable filetype detection
+    filetype on 
+
+    " Set special options for one kind of file:
+    " autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
+endif
