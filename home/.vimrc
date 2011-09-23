@@ -12,7 +12,7 @@ set shiftwidth=4
 " Solarized theme
 syntax enable
 if has('gui_running')
-  set background = dark
+  set background=dark
   colorscheme solarized
 endif
 
