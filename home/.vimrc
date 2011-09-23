@@ -11,8 +11,10 @@ set shiftwidth=4
 
 " Solarized theme
 syntax enable
-set background=dark
-colorscheme solarized
+if has('gui_running')
+  set background = dark
+  colorscheme solarized
+endif
 
 " Soft wrap
 set wrap linebreak textwidth=0

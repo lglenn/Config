@@ -1,5 +1,4 @@
-
-HOME = '/Users/larry'
+HOME = ENV['HOME']
 BASH_FILES = %w{.bashrc .bash_profile .bash_logout}
 ZSH_FILES = %w{.zshrc .java_setup}
 EMACS_FILES = %w{.emacs}
