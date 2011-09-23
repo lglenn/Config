@@ -1,15 +1,18 @@
 HOME = ENV['HOME']
-BASH_FILES = %w{.bashrc .bash_profile .bash_logout}
-ZSH_FILES = %w{.zshrc .java_setup}
-EMACS_FILES = %w{.emacs}
-GIT_FILES = %w{.gitignore .gitconfig}
-SCREEN_FILES = %w{.screenrc}
-VIM_FILES = %w{.vimrc}
+
+BASH_FILES = %w{bashrc bash_profile bash_logout}
+ZSH_FILES = %w{zshrc java_setup}
+EMACS_FILES = %w{emacs}
+GIT_FILES = %w{gitignore gitconfig}
+SCREEN_FILES = %w{screenrc}
+VIM_FILES = %w{vimrc}
+
+vim_dependencies = [VIM_FILES]
 
 dotfiles = BASH_FILES + ZSH_FILES + EMACS_FILES + GIT_FILES + SCREEN_FILES + VIM_FILES
 
-def make_file_copy_task file
-    target = "#{HOME}/#{file}"
+def make_dotfile_copy_task file
+    target = "#{HOME}/.#{file}"
     src = "./home/#{file}"
     task file => target
     file target => src do
@@ -29,10 +32,16 @@ def make_copy_dir_task src_list, target_dir, task_symbol
 end
 
 dotfiles.each do |dotfile|
-    make_file_copy_task dotfile
+    make_dotfile_copy_task dotfile
 end
 
-task :default => [:zsh, :bash, :emacs, :git, :screen, :vim]
+%w{colors ftdetect plugin indent syntax}.each do |dir|
+    task_symbol = "vim_#{dir}_dir".to_sym
+    make_copy_dir_task "./home/vim/#{dir}/*.vim", "#{HOME}/.vim/#{dir}", task_symbol
+    vim_dependencies << task_symbol
+end
+
+task :default => [:zsh, :bash, :emacs_ed, :git, :screen, :vim]
 
 desc "zsh config"
 task :zsh => ZSH_FILES
@@ -40,17 +49,12 @@ task :zsh => ZSH_FILES
 desc "bash config"
 task :bash => BASH_FILES
 
-make_copy_dir_task './home/.vim/colors/*.vim', "#{HOME}/.vim/colors", :vim_color_dir
-make_copy_dir_task './home/.vim/ftdetect/*.vim', "#{HOME}/.vim/ftdetect", :vim_ftdetect_dir
-make_copy_dir_task './home/.vim/plugin/*.vim', "#{HOME}/.vim/plugin", :vim_plugin_dir
-make_copy_dir_task './home/.vim/indent/*.vim', "#{HOME}/.vim/indent", :vim_indent_dir
-make_copy_dir_task './home/.vim/syntax/*.vim', "#{HOME}/.vim/syntax", :vim_syntax_dir
 desc "vim config"
-task :vim => [VIM_FILES, :vim_color_dir, :vim_ftdetect_dir, :vim_plugin_dir, :vim_indent_dir, :vim_syntax_dir]
+task :vim => vim_dependencies
 
-make_copy_dir_task './home/.emacs.d/site-lisp/*.el', "#{HOME}/.emacs.d/site-lisp", :emacsdir
+make_copy_dir_task './home/emacs.d/site-lisp/*.el', "#{HOME}/.emacs.d/site-lisp", :emacsdir
 desc "emacs config"
-task :emacs => [EMACS_FILES, :emacsdir]
+task :emacs_ed => [EMACS_FILES, :emacsdir]
 
 desc "git config"
 task :git => GIT_FILES
