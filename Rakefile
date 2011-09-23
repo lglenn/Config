@@ -54,7 +54,7 @@ end
 emacs_deps = makedeps EMACS_FILES
 emacs_deps += make_copy_dir_task('./home/emacs/emacs.d/site-lisp/*.el', "#{HOME}/.emacs.d/site-lisp", :emacsdir)
 
-task :default => [:zsh, :bash, :emacs_ed, :git, :screen, :vim]
+task :default => [:zsh, :bash, :gnu_emacs, :git, :screen, :vim]
 
 desc "zsh config"
 task :zsh => zsh_deps
