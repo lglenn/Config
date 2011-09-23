@@ -40,9 +40,13 @@ task :zsh => ZSH_FILES
 desc "bash config"
 task :bash => BASH_FILES
 
-make_copy_dir_task './home/.vim/colors/*.vim', "#{HOME}/.vim/colors", :vimdir
+make_copy_dir_task './home/.vim/colors/*.vim', "#{HOME}/.vim/colors", :vim_color_dir
+make_copy_dir_task './home/.vim/ftdetect/*.vim', "#{HOME}/.vim/ftdetect", :vim_ftdetect_dir
+make_copy_dir_task './home/.vim/plugin/*.vim', "#{HOME}/.vim/plugin", :vim_plugin_dir
+make_copy_dir_task './home/.vim/indent/*.vim', "#{HOME}/.vim/indent", :vim_indent_dir
+make_copy_dir_task './home/.vim/syntax/*.vim', "#{HOME}/.vim/syntax", :vim_syntax_dir
 desc "vim config"
-task :vim => [VIM_FILES, :vimdir]
+task :vim => [VIM_FILES, :vim_color_dir, :vim_ftdetect_dir, :vim_plugin_dir, :vim_indent_dir, :vim_syntax_dir]
 
 make_copy_dir_task './home/.emacs.d/site-lisp/*.el', "#{HOME}/.emacs.d/site-lisp", :emacsdir
 desc "emacs config"
