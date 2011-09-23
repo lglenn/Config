@@ -40,7 +40,7 @@ set listchars=tab:▸\ ,eol:¬
 " Filetype stuff
 if has("autocmd") 
     " Enable filetype detection
-    filetype on 
+    filetype plugin indent on
 
     " Set special options for one kind of file:
     " autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
