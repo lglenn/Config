@@ -14,6 +14,8 @@ syntax enable
 if has('gui_running')
   set background=dark
   colorscheme solarized
+  " Kill the audible bell!
+  set visualbell
 endif
 
 " Soft wrap
