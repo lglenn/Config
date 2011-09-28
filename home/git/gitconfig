@@ -16,4 +16,4 @@
 	dc = diff --cached
 	dcs = diff --cached --stat
 [core]
-	excludesfile = /Users/larry/.gitignore
+	excludesfile = ~/.gitignore
