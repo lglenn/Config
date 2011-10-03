@@ -50,3 +50,16 @@ if has("autocmd")
     autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType markdown setlocal ts=4 sts=4 sw=2 noexpandtab
 endif
+
+"
+" :edit hacks
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+" Open file relative to current file in new window
+map <leader>ew :e %%
+" Open file relative to current file in new split
+map <leader>es :sp %%
+" Open file relative to current file in new vertical split
+map <leader>ev :vsp %%
+" Open file relative to current file in new tab
+map <leader>et :tabe %%
+
