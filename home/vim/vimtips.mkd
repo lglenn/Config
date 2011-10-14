@@ -1,0 +1,163 @@
+Display
+-------
+
+Line numbers in gutter: set number
+Show/hide hidden characters: set (no)list
+Syntax coloring: :syntax on|off 
+
+Substitution
+------------
+
+### Pre-chars
+% make sub apply to whole file
+
+### After-chars
+/e suppress errors
+
+### Quirks
+Need to quote e.g. +, so /\s+/ (Perl) becomes /\s\+/ (vim)
+
+### Recipes
+Delete all blank lines in the file: :g/^$/d 
+
+Windows
+-------
+:help C-w
+
+### Splitting
+Split horizontally: C-w s / :sp [file]
+Split vertically: C-w v / :vsp [file]
+
+### Closing
+Close the active window: C-w q / :q
+Close all but the active window: C-w o / :only
+
+### Moving between windows
+Click in another window to go to it.
+Cycle though windows: C-w w
+Cursor through windows: C-w [hjkl] / C-[hjkl] (I mapped that)
+
+### Resizing windows
+Make window bigger/smaller: C-w +/- / click on bar and drag
+Equalize windows: C-w =
+Maximize window horizontally / vertically: C-w <underscore>/<pipe>
+
+### Re-ordering windows
+Rotate windows: C-w r/R
+Swap adjacent windows: C-w x 
+Move a window directionally: C-w [HJKL]
+Move current window to new tab: C-w T
+
+Tabs
+----
+
+Open a new tab: :tabedit [filename]
+
+Whitespace
+----------
+
+Convert all tabs to spaces: :retab
+
+Buffers
+-------
+
+List buffers: :ls
+Next / Prev buffer: :bn :bp adding a ! does it when not saved
+Go to a specific buffer: C-^ <n> or :b <n> where n is the number in the buffer list.
+Toggle active / alternate buffer: C-^ or :e #
+
+Auto hide dirty buffers: set hidden
+
+### The Buffer List
+ %a active buffer
+ #  alternate buffer
+ +  buffer has been modified, not saved
+ h  hidden -- unsaved changes, with unsaved changes
+
+Revert file: :e
+
+Indentation
+-----------
+
+In / de-Indent: >> or <<
+Indent blocks: use visual mode to select a block, then e.g. >> and . to repeat.
+Autoindent: == (or <count>==) in visual mode, just =
+
+### Indent with motions
+Indent the entire file: gg=G
+(go to line 1, then indent{motion}, in this case G
+Indent block: =<count>{
+Indent inside of block: =i} (i selects innner)
+
+File System Explorer
+--------------------
+
+Explore: :e <dir>
+Explore *from the working document's location*: :E
+Open an explorer in a new window: :split|sp or :vsplit|vsp <dir>
+Open a new explorer, relative to working doc, in a new window: :S|Vex
+Create a new file in the explorer's current dir: %
+Create a new dir in the explorer's current dir: d
+Go up a dir: -
+
+FileTypes
+---------
+autocmd
+setlocal 
+filetype on to enable detection
+wrap autocmds in if(has(autocomand)
+See what kind of file vim thinks you're looking at: :set ft?
+Set filetype: :set filetype=<type>
+
+Set a certain filetype for a given extension (in this case, type xml for .rss and .atom files): 
+    autocmd BufNewFile,BufRead *.rss,*.atom setfiletype xml
+
+Show Invisibles
+---------------
+Show invisibles: :set list
+Hide invisibles: :set nolist
+Toggle invisibles: :set list!
+Keymap it: nmap <leader>l :set list!<CR>
+Customize symbols: change listchars
+Insert unicode char: C-v u25b8 inserts ▸ 
+
+How to Use Tabs
+---------------
+Search for something (and open the file if needed): :vimgrep <pattern> <file>
+Where am I? :pwd
+CD: :cd
+Each tab has its own working directory
+New tab: :tabnew
+Next tab: :tabn
+Prev tab: :tabp
+Open file in new tab: :tabe
+
+The Changelist and the Jumplist
+-------------------------------
+Go back to where you were when you left insert mode: g;
+Move back through the changelist: g;
+Move forward through the changelist: g,
+See the changelist: :changes
+Move back in the jumplist: C-o
+Move back in the jumplist: C-i
+View the jumplist: :jumps
+Follow a hyperlink in help: mouse click link, or C-]
+Go back a link: (jump back): C-o
+
+Case Changes
+------------
+Toggle case of the letter you're on: ~
+Change case of a region: gU{motion} or gu{motion}
+
+The Edit Command
+----------------
+% is the path to the current file, relative to pwd
+:p expands to abs path
+:h is dirname
+To cd to the directory of the curent file: `:cd %:p:h`
+
+Scrolling
+---------
+z. move the line the cursor is on to the middle of the screen
+zt move the line the cursor is on to the top of the screen
+zb move the line the cursor is on to the bottom of the screen
