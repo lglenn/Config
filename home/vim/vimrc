@@ -63,3 +63,7 @@ map <leader>ev :vsp %%
 " Open file relative to current file in new tab
 map <leader>et :tabe %%
 
+" 
+" Make underscores (_) word separators, so e.g. foo_bar is considered two
+" words, not one.
+set iskeyword-=_
