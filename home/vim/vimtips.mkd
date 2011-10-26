@@ -103,10 +103,15 @@ Go up a dir: -
 FileTypes
 ---------
 autocmd
+
 setlocal 
+
 filetype on to enable detection
-wrap autocmds in if(has(autocomand)
+
+Wrap autocmds in if(has(autocomand)
+
 See what kind of file vim thinks you're looking at: :set ft?
+
 Set filetype: :set filetype=<type>
 
 Set a certain filetype for a given extension (in this case, type xml for .rss and .atom files): 
