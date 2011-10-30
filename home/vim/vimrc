@@ -27,6 +27,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Map shift-up and shift-down to scroll window up and scroll window down
+map <S-Up> <C-Y>
+map <S-Down> <C-E>
+
 " Don't complain when moving away from a dirty buffer, just create 
 " a hidden one
 set hidden
