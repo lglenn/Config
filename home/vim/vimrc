@@ -1,5 +1,7 @@
 " Line numbers in gutter
 set number
+" Line and column number in lower-right corner
+set ruler
 
 "
 " Tabbing
