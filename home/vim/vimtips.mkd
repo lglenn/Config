@@ -161,3 +161,7 @@ Scrolling
 z. move the line the cursor is on to the middle of the screen
 zt move the line the cursor is on to the top of the screen
 zb move the line the cursor is on to the bottom of the screen
+
+Appending
+---------
+Append to the end of a word: ea
