@@ -58,8 +58,14 @@ if has("autocmd")
 endif
 
 "
+" Turn off search highlights with C-l
+noremap <silent> <c-l> :nohls<cr><c-l>
+
+"
 " :edit hacks
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+"
 " Open file relative to current file in new window
 map <leader>ew :e %%
 " Open file relative to current file in new split
