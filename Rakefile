@@ -4,6 +4,7 @@ BASH_FILES = { "home/bash" => %w{bashrc bash_profile bash_logout} }
 ZSH_FILES = { "home/zsh" => %w{zshrc java_setup} }
 GIT_FILES = { "home/git" => %w{gitignore gitconfig} }
 SCREEN_FILES = { "home/screen" => %w{screenrc} }
+TMUX_FILES = { "home/tmux" => %w{tmux.conf} }
 VIM_FILES = { "home/vim" => %w{vimrc} }
 EMACS_FILES = { "home/emacs" => %w{emacs} }
 
@@ -43,6 +44,7 @@ zsh_deps = makedeps ZSH_FILES
 bash_deps = makedeps BASH_FILES
 git_deps = makedeps GIT_FILES
 screen_deps = makedeps SCREEN_FILES
+tmux_deps = makedeps TMUX_FILES
 
 vim_deps = makedeps VIM_FILES
 %w{colors ftdetect plugin indent syntax}.each do |dir|
@@ -54,7 +56,7 @@ end
 emacs_deps = makedeps EMACS_FILES
 emacs_deps += make_copy_dir_task('./home/emacs/emacs.d/site-lisp/*.el', "#{HOME}/.emacs.d/site-lisp", :emacsdir)
 
-task :default => [:zsh, :bash, :gnu_emacs, :git, :screen, :vim]
+task :default => [:zsh, :bash, :gnu_emacs, :git, :screen, :vim, :tmux]
 
 desc "zsh config"
 task :zsh => zsh_deps
@@ -73,3 +75,6 @@ task :git => git_deps
 
 desc "screen config"
 task :screen => screen_deps
+
+desc "tmux config"
+task :tmux => tmux_deps
