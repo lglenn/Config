@@ -1,0 +1,55 @@
+Notes on tmux
+=============
+
+Naming sessions
+---------------
+C-b $ allows you to (re)name your session. If you don't name your session, it'll be given a numeric name.
+
+List sessions 
+-------------
+From outside tmux: tmux ls
+From inside: C-b s
+
+Switch Sessions
+---------------
+Unlike GNU Screen, tmux gives you the ability to switch your active session without leaving the program. Kind of a nice side-effect of the server/client architecture.
+C-b s gives you an interactive list of sessions. 
+C-b L switches you to the last session (it's the session equivalent of C-b l, which switches you to the last window. 
+
+Switch Windows
+--------------
+C-b l switches to the last window you were in -- it's like that button on the TV remote.
+
+Panes
+=====
+
+Switch Panes
+------------
+C-b ; switches to the last pane you were in on this window. Mnemonic: think of ';' as a lesser 'l'. They kind of look the same.
+C-b o switches to the next pane in the current window. 
+C-b C-o rotates the panes. The rotation behavior is pretty difficult to predict, and realistically, you wouldn't want to do it with more than two panes. So think of it as 'when I have two panes in the current window, and I want to swap them'.
+
+Split Panes
+-----------
+C-b % splits a window (or pane) vertically (mnemonic: think of the % as a picture of a split window, with something on each side)
+C-b " splits a window (or pane) horizontally (mnemonic: I really can't think of one)
+
+_Custom:_
+I find the default key bindings to be difficult to remember. Add this to your .tmux.conf file for more intuitive behavior: 
+bind-key _ split-window
+bind-key | split-window -h
+I use the underscore rather than a dash for the horizontal split so that both split commands require the shift key.
+
+Which window was that in...?
+----------------------------
+C-b f prompts you for a search string. Hit enter, and you get popped to the window that contains that text. Case-sensitive, though. 
+
+Copy-Paste
+----------
+C-b # lists all the paste buffers
+C-b = gives you an interactive listing of the paste buffers; scroll to the one you want and hit enter to paste.
+
+Screen/tmux Cheat Sheet
+-----------------------
+http://www.dayid.org/os/notes/tm.html
+
