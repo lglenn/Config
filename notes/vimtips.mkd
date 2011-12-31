@@ -20,6 +20,9 @@ Need to quote e.g. +, so /\s+/ (Perl) becomes /\s\+/ (vim)
 ### Recipes
 Delete all blank lines in the file: :g/^$/d 
 
+### Non-Greediness
+\{-} is the equivalent of Perl ?
+
 Windows
 -------
 :help C-w
