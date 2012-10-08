@@ -3,6 +3,9 @@ set number
 " Line and column number in lower-right corner
 set ruler
 
+" Use modelines - must be one of the first three lines.
+set modelines=3
+
 "
 " Tabbing
 set tabstop=2
