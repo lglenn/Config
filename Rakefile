@@ -53,10 +53,17 @@ vim_deps = makedeps VIM_FILES
     vim_deps << task_symbol
 end
 
+ipython_deps = []
+%w{profile_default}.each do |dir|
+    task_symbol = "ipython_#{dir}_dir".to_sym
+    make_copy_dir_task "./home/ipython/#{dir}/*", "#{HOME}/.ipython/#{dir}", task_symbol
+    ipython_deps << task_symbol
+end
+
 emacs_deps = makedeps EMACS_FILES
 emacs_deps += make_copy_dir_task('./home/emacs/emacs.d/site-lisp/*.el', "#{HOME}/.emacs.d/site-lisp", :emacsdir)
 
-task :default => [:zsh, :bash, :gnu_emacs, :git, :screen, :vim, :tmux]
+task :default => [:zsh, :bash, :gnu_emacs, :git, :screen, :vim, :tmux, :ipython]
 
 desc "zsh config"
 task :zsh => zsh_deps
@@ -78,3 +85,6 @@ task :screen => screen_deps
 
 desc "tmux config"
 task :tmux => tmux_deps
+
+desc "ipython config"
+task :ipython => ipython_deps
