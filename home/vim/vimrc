@@ -76,9 +76,18 @@ map <leader>es :sp %%
 " Open file relative to current file in new vertical split
 map <leader>ev :vsp %%
 " Open file relative to current file in new tab
-map <leader>et :tabe %%
+map <leader>en :tabe %%
 
 " 
 " Make underscores (_) word separators, so e.g. foo_bar is considered two
 " words, not one.
 set iskeyword-=_
+
+" Pathogen
+execute pathogen#infect()
+filetype off
+call pathogen#incubate()
+
+" Clojure
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#ParenRainbow = 1
