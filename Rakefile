@@ -47,7 +47,7 @@ screen_deps = makedeps SCREEN_FILES
 tmux_deps = makedeps TMUX_FILES
 
 vim_deps = makedeps VIM_FILES
-%w{autoload colors ftdetect plugin indent syntax}.each do |dir|
+%w{autoload colors ftdetect ftplugin plugin indent syntax}.each do |dir|
     task_symbol = "vim_#{dir}_dir".to_sym
     make_copy_dir_task "./home/vim/vim/#{dir}/*.vim", "#{HOME}/.vim/#{dir}", task_symbol
     vim_deps << task_symbol
