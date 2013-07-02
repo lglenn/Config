@@ -44,8 +44,8 @@ bash_deps = makedeps BASH_FILES
 git_deps = makedeps GIT_FILES
 screen_deps = makedeps SCREEN_FILES
 tmux_deps = makedeps TMUX_FILES
-ipython_deps = []
 
+ipython_deps = []
 %w{profile_default}.each do |dir|
     task_symbol = "ipython_#{dir}_dir".to_sym
     make_copy_dir_task "./home/ipython/#{dir}/*", "#{HOME}/.ipython/#{dir}", task_symbol
