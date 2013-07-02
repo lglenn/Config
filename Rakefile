@@ -5,7 +5,6 @@ ZSH_FILES = { "home/zsh" => %w{zshrc java_setup} }
 GIT_FILES = { "home/git" => %w{gitignore gitconfig} }
 SCREEN_FILES = { "home/screen" => %w{screenrc} }
 TMUX_FILES = { "home/tmux" => %w{tmux.conf} }
-VIM_FILES = { "home/vim" => %w{vimrc} }
 EMACS_FILES = { "home/emacs" => %w{emacs} }
 
 def make_dotfile_copy_task src_dir,file
@@ -46,13 +45,6 @@ git_deps = makedeps GIT_FILES
 screen_deps = makedeps SCREEN_FILES
 tmux_deps = makedeps TMUX_FILES
 
-vim_deps = makedeps VIM_FILES
-%w{autoload colors ftdetect ftplugin plugin indent syntax}.each do |dir|
-    task_symbol = "vim_#{dir}_dir".to_sym
-    make_copy_dir_task "./home/vim/vim/#{dir}/*.vim", "#{HOME}/.vim/#{dir}", task_symbol
-    vim_deps << task_symbol
-end
-
 ipython_deps = []
 %w{profile_default}.each do |dir|
     task_symbol = "ipython_#{dir}_dir".to_sym
@@ -63,16 +55,13 @@ end
 emacs_deps = makedeps EMACS_FILES
 emacs_deps += make_copy_dir_task('./home/emacs/emacs.d/site-lisp/*.el', "#{HOME}/.emacs.d/site-lisp", :emacsdir)
 
-task :default => [:zsh, :bash, :gnu_emacs, :git, :screen, :vim, :tmux, :ipython]
+task :default => [:zsh, :bash, :gnu_emacs, :git, :screen, :tmux, :ipython]
 
 desc "zsh config"
 task :zsh => zsh_deps
 
 desc "bash config"
 task :bash => bash_deps
-
-desc "vim config"
-task :vim => vim_deps
 
 desc "emacs config"
 task :gnu_emacs => emacs_deps
