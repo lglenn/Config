@@ -102,8 +102,9 @@ alias zsh='exec zsh'
 #
 # prompt
 #
+
 autoload -U colors && colors
-export PROMPT="%(#.%{$fg[red]%}.%{$fg[green]%})%n:%?:%b:%{$fg[yellow]%}%~%{$fg[green]%}> %{$reset_color%}"
+export PROMPT="%(#.%{$fg[red]%}.%{$fg[green]%})%n:%m:%?:%b:%{$fg[yellow]%}%~%{$fg[green]%}> %{$reset_color%}"
 
 #
 # editor
