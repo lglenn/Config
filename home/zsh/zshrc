@@ -158,13 +158,13 @@ function table() {
 # OS-Specific functionality.
 case `uname` in
     Darwin)
-	if [ -f "$HOME/.java_setup" ]
-	then
-	    . $HOME/.java_setup
-	fi
-	;;
+        if [ -f "$HOME/.java_setup" ]
+        then
+            . $HOME/.java_setup
+        fi
+        ;;
     Linux)
-	;;
+        ;;
 esac
 
 hostname=`hostname`;
