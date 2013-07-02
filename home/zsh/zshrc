@@ -169,6 +169,11 @@ esac
 
 hostname=`hostname`;
 
+if [ -f "$HOME/.local.zshrc" ]
+then
+    . $HOME/.local.zshrc
+fi
+
 if [ -f "$HOME/.local.${hostname}" ]
 then
     . $HOME/.local.${hostname}
