@@ -162,6 +162,11 @@ case `uname` in
         then
             . $HOME/.java_setup
         fi
+        # Run Boxen setup if this is a Boxen box...
+        if [ -f "/opt/boxen/env.sh" ]
+        then
+            source /opt/boxen/env.sh
+        fi
         ;;
     Linux)
         ;;
