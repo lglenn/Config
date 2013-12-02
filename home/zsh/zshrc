@@ -1,3 +1,5 @@
+# vim: sw=2:ts=2
+
 # Set emacs key bindings in line editor
 bindkey -e
 
