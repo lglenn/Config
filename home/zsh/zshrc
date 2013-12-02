@@ -91,6 +91,18 @@ append_path() {
 	fi
 }
 
+source_file() {
+  file="$1";
+  comment=${2:="it"};
+  if [ -f $file ]
+  then
+    echo "Sourcing ${file}..."
+    . $file
+  else
+    echo "Couldn't find ${file}, so not sourcing ${comment}..."
+  fi
+}
+
 #
 # umask 
 #
@@ -176,15 +188,8 @@ esac
 
 hostname=`hostname`;
 
-if [ -f "$HOME/.local.zshrc" ]
-then
-    . $HOME/.local.zshrc
-fi
-
-if [ -f "$HOME/.local.${hostname}" ]
-then
-    . $HOME/.local.${hostname}
-fi
+source_file "$HOME/.local.zshrc" "local zsh setttings";
+source_file "$HOME/.local.${hostname}" "host-specific zsh setttings";
 
 ## rbenv
 if [ -d "$HOME/.rbenv" ]
