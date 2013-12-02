@@ -194,6 +194,7 @@ source_file "$HOME/.local.${hostname}" "host-specific zsh setttings";
 ## rbenv
 if [ -d "$HOME/.rbenv" ]
 then
+    echo "Initializing rbenv";
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 fi
