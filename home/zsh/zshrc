@@ -112,6 +112,7 @@ umask 002
 # aliases
 #
 alias zsh='exec zsh'
+alias tat='tmux attach'
 
 #
 # prompt
