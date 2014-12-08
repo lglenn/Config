@@ -72,6 +72,12 @@ task :git => git_deps
 desc "screen config"
 task :screen => screen_deps
 
+directory "#{ENV['HOME']}/.tmux/plugins"
+file "#{ENV['HOME']}/.tmux/plugins" do
+  cp_r Dir["home/tmux/tmux/plugins"], "#{ENV['HOME']}/.tmux"
+end
+task :tmux => "#{ENV['HOME']}/.tmux/plugins"
+
 desc "tmux config"
 task :tmux => tmux_deps
 
