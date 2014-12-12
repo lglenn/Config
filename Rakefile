@@ -72,14 +72,16 @@ task :git => git_deps
 desc "screen config"
 task :screen => screen_deps
 
-directory "#{ENV['HOME']}/.tmux/plugins"
-file "#{ENV['HOME']}/.tmux/plugins" do
-  cp_r Dir["home/tmux/tmux/plugins"], "#{ENV['HOME']}/.tmux"
-end
-task :tmux => "#{ENV['HOME']}/.tmux/plugins"
-
 desc "tmux config"
 task :tmux => tmux_deps
+rule( %r{#{HOME}/\.tmux/plugins/.*} => [ proc {|target| target.sub(%r{^#{HOME}/\.tmux}, 'home/tmux/tmux') } ]) do |t|
+  mkdir_p File.dirname(t.name) if !File.directory?(File.dirname(t.name))
+  cp t.source, t.name if File.file?(t.source)
+end
+directory "#{ENV['HOME']}/.tmux/plugins"
+task :tmux_plugins => "#{ENV['HOME']}/.tmux/plugins"
+task :tmux_plugins => FileList.new('home/tmux/tmux/plugins/**/*').map { |f| f.sub(%r{^home/tmux/tmux},"#{HOME}/.tmux") }
+task :tmux => :tmux_plugins
 
 desc "ipython config"
 task :ipython => ipython_deps
