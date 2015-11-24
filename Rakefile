@@ -6,6 +6,7 @@ GIT_FILES = { "home/git" => %w{gitignore gitconfig} }
 SCREEN_FILES = { "home/screen" => %w{screenrc} }
 TMUX_FILES = { "home/tmux" => %w{tmux.conf} }
 EMACS_FILES = { "home/emacs" => %w{emacs} }
+GPG_DIR = "#{HOME}/.gnupg"
 
 def make_dotfile_copy_task src_dir,file
     target = "#{HOME}/.#{file}"
@@ -86,9 +87,10 @@ task :tmux => :tmux_plugins
 desc "ipython config"
 task :ipython => ipython_deps
 
+## gnupg
+
 desc "gnupg config"
 task :gpg
-GPG_DIR = "#{HOME}/.gnupg"
 directory GPG_DIR
 task :chmod_gpg => GPG_DIR do
   chmod 0700, GPG_DIR
