@@ -85,3 +85,15 @@ task :tmux => :tmux_plugins
 
 desc "ipython config"
 task :ipython => ipython_deps
+
+desc "gnupg config"
+task :gpg
+GPG_DIR = "#{HOME}/.gnupg"
+directory GPG_DIR
+task :chmod_gpg => GPG_DIR do
+  chmod 0700, GPG_DIR
+end
+file "#{GPG_DIR}/gpg.conf" => [ "home/gnupg/gpg.conf", GPG_DIR ] do
+  cp "home/gnupg/gpg.conf", GPG_DIR
+end
+task :gpg => [ :chmod_gpg, GPG_DIR, "#{GPG_DIR}/gpg.conf" ]
