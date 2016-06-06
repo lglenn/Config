@@ -4,16 +4,17 @@
 [color]
 	ui = auto
 [alias]
+	ai = add -i
+	amend = commit -C HEAD --amend
+	br = branch
 	ci = commit
 	co = checkout
-	s = status
-	st = status
-	br = branch
-	ai = add -i
-	l = log --pretty='format:%Cred%h %Cblue%ai %Cgreen%d%n%Creset%s%n'
 	d = diff
-	ds = diff --stat
 	dc = diff --cached
 	dcs = diff --cached --stat
+	ds = diff --stat
+	l = log --pretty='format:%Cred%h %Cblue%ai %Cgreen%d%n%Creset%s%n'
+	s = status
+	st = status
 [core]
 	excludesfile = ~/.gitignore
