@@ -182,6 +182,14 @@ case `uname` in
         then
             source /opt/boxen/env.sh
         fi
+        # If docker-machine is installed, create a function dockerenv
+        # which will configure your environment for docker.
+        if [ -x `which docker-machine` ]
+        then
+          function dockerenv() {
+            eval "$(docker-machine env)";
+          }
+        fi
         ;;
     Linux)
         ;;
@@ -199,3 +207,4 @@ then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 fi
+
