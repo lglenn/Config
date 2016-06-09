@@ -113,6 +113,7 @@ umask 002
 #
 alias zsh='exec zsh'
 alias tat='tmux attach'
+alias tats='tmux attach -t'
 alias tl='tmux list-sessions'
 
 #
