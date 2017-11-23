@@ -7,6 +7,9 @@
 ;;; turn on syntax hilighting
 (global-font-lock-mode 1)
 
+;;; Show time in the modeline
+(display-time)
+
 ;;; CSS Mode
 (autoload 'css-mode "css-mode-simple")
 (setq auto-mode-alist       
