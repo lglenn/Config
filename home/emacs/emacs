@@ -4,11 +4,16 @@
 (setq load-path (append load-path '("/usr/share/emacs/site-lisp")))
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
 
-;;; turn on syntax hilighting
+;;; Misc settings
+
+;; turn on syntax hilighting
 (global-font-lock-mode 1)
 
-;;; Show time in the modeline
+;; Show time in the modeline
 (display-time)
+
+;; Don't add duplicate kills to the kill ring
+(setq kill-do-not-save-duplicates t)
 
 ;;; CSS Mode
 (autoload 'css-mode "css-mode-simple")
