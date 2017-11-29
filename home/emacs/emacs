@@ -20,11 +20,6 @@
 (require 'ido)
 (ido-mode t)
 
-;; Evil Mode
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(package-initialize)
-
 ;; Git
 (require 'git)
 
