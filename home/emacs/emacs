@@ -15,6 +15,9 @@
 ;; Don't add duplicate kills to the kill ring
 (setq kill-do-not-save-duplicates t)
 
+;; Dedupe command history
+(setq history-delete-duplicates t)
+
 ;;; CSS Mode
 (autoload 'css-mode "css-mode-simple")
 (setq auto-mode-alist       
