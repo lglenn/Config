@@ -1,8 +1,8 @@
 
-(setq load-path (append load-path '("/usr/share/emacs/site-lisp")))
-(add-to-list 'load-path "~/.emacs.d/site-lisp/")
-
 ;;; Misc settings
+
+;; Use user-specific files
+(add-to-list 'load-path "~/.emacs.d/site-lisp/")
 
 ;; turn on syntax hilighting
 (global-font-lock-mode 1)
