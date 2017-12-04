@@ -10,8 +10,13 @@
 ;; turn on syntax hilighting
 (global-font-lock-mode 1)
 
-;; Show time in the modeline
+;;;; Modeline
+
+;; Show time
 (display-time)
+
+;; Show file size 
+(size-indication-mode)
 
 ;; Don't add duplicate kills to the kill ring
 (setq kill-do-not-save-duplicates t)
