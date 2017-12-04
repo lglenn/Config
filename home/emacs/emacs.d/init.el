@@ -55,7 +55,9 @@
 (setq org-log-done 'time)
 
 ;; Default location for org files
-(setq org-directory "~/SpiderOak Hive/Agenda/")
+(setq org-directory "~/SpiderOak Hive/gtd/")
+(setq org-gtd-inbox-file (concat org-directory "inbox.org"))
+(setq org-gtd-tickler-file (concat org-directory "tickler.org"))
 
 ;; Mobile Org Config
 ;; See: http://orgmode.org/manual/MobileOrg.html#MobileOrg
@@ -78,10 +80,10 @@
 (setq org-log-into-drawer "LOGBOOK")
 
 (setq org-capture-templates '(("t" "Todo [inbox]" entry
-                               (file+headline "~/SpiderOak Hive/Agenda/inbox.org" "Tasks")
+                              (file+headline org-gtd-inbox-file "Tasks")
                                "* TODO %i%?")
                               ("T" "Tickler" entry
-                               (file+headline "~/SpiderOak Hive/Agenda/tickler.org" "Tickler")
+                               (file+headline org-gtd-tickler-file "Tickler")
                                "* %i%? \n %U")))
 
 (setq org-default-notes-file (concat org-directory "inbox.org"))
