@@ -5,7 +5,6 @@ ZSH_FILES = { "home/zsh" => %w{zshrc java_setup} }
 GIT_FILES = { "home/git" => %w{gitignore gitconfig} }
 SCREEN_FILES = { "home/screen" => %w{screenrc} }
 TMUX_FILES = { "home/tmux" => %w{tmux.conf} }
-EMACS_FILES = { "home/emacs" => %w{emacs} }
 GPG_DIR = "#{HOME}/.gnupg"
 
 def make_dotfile_copy_task src_dir,file
@@ -53,7 +52,7 @@ ipython_deps = []
     ipython_deps << task_symbol
 end
 
-emacs_deps = makedeps EMACS_FILES
+emacs_deps = make_copy_dir_task('./home/emacs/emacs.d/*.el', "#{HOME}/.emacs.d", :emacsdir)
 emacs_deps += make_copy_dir_task('./home/emacs/emacs.d/site-lisp/*.el', "#{HOME}/.emacs.d/site-lisp", :emacsdir)
 
 task :default => [:zsh, :bash, :gnu_emacs, :git, :screen, :tmux, :ipython]
