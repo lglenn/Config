@@ -74,6 +74,9 @@
 								       "gtd.org"
 								       "tickler.org")))
 
+;; Log todo state changes
+(setq org-log-into-drawer "LOGBOOK")
+
 (setq org-capture-templates '(("t" "Todo [inbox]" entry
                                (file+headline "~/SpiderOak Hive/Agenda/inbox.org" "Tasks")
                                "* TODO %i%?")
