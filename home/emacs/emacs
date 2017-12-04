@@ -53,18 +53,39 @@
       '((sequence "TODO (t)" "DEFER (d)" "WAITING (w)" "|" "DONE (D)" "DELEGATED")))
 (setq org-log-done 'time)
 
-(setq home "/Users/larry.glenn/")
-
 ;; Default location for org files
-(setq org-directory (concat home "SpiderOak Hive/Agenda/"))
+(setq org-directory "~/SpiderOak Hive/Agenda/")
 
 ;; Mobile Org Config
 ;; See: http://orgmode.org/manual/MobileOrg.html#MobileOrg
 
 ;; Mobile files are exchanged here.
-(setq org-mobile-directory (concat home "~/Dropbox (Personal)/Apps/MobileOrg"))
+(setq org-mobile-directory "~/Dropbox (Personal)/Apps/MobileOrg")
 
 ;; By default, files in org-agenda-files are included. Add other files by setting
 ;; org-mobile-files
 
 (setq org-mobile-inbox-for-pull (concat org-directory "mobile-inbox.org"))
+
+;; Ideas from https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
+(setq org-agenda-files (mapcar (lambda (e) (concat org-directory e)) '("inbox.org"
+								       "mobile-inbox.org"
+								       "gtd.org"
+								       "tickler.org")))
+
+(setq org-capture-templates '(("t" "Todo [inbox]" entry
+                               (file+headline "~/SpiderOak Hive/Agenda/inbox.org" "Tasks")
+                               "* TODO %i%?")
+                              ("T" "Tickler" entry
+                               (file+headline "~/SpiderOak Hive/Agenda/tickler.org" "Tickler")
+                               "* %i%? \n %U")))
+
+(setq org-default-notes-file (concat org-directory "inbox.org"))
+     (define-key global-map "\C-cc" 'org-capture)
+
+(setq org-refile-targets (mapcar (lambda (e) (cons (concat org-directory (car e)) (cdr e)))
+      '(
+	("gtd.org" :maxlevel . 3)
+      	("someday.org" :level . 1)
+      	("tickler.org" :maxlevel . 2)
+	)))
