@@ -1,6 +1,13 @@
 ;;; Org-mode
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+;; Global keys
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cb" 'org-iswitchb)
+
 (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("@coop" . ?c)))
 (setq org-tag-persistent-alist org-tag-alist)
 (setq org-todo-keywords
@@ -41,7 +48,6 @@
                                "* %i%? \n %U")))
 
 (setq org-default-notes-file (concat org-directory "inbox.org"))
-     (define-key global-map "\C-cc" 'org-capture)
 
 (setq org-refile-targets (mapcar (lambda (e) (cons (concat org-directory (car e)) (cdr e)))
       '(
