@@ -11,7 +11,15 @@
 (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("@coop" . ?c)))
 (setq org-tag-persistent-alist org-tag-alist)
 (setq org-todo-keywords
-      '((sequence "TODO (t!)" "PLAN (p!)" "NEXT-ACTION (n!)" "WAITING (w@/!)" "APPT (a!)" "DEFERRED (d!)" "|" "CANCELLED (c@)" "DONE (D!)")))
+      '((sequence "TODO (t!)"
+		  "PLAN (p!)"
+		  "NEXT-ACTION (n!)"
+		  "WAITING (w@/!)"
+		  "APPT (a!)"
+		  "DEFERRED (d!)"
+		  "|"
+		  "CANCELLED (c@)"
+		  "DONE (D!)")))
 
 (setq org-log-done 'time)
 
