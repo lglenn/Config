@@ -62,6 +62,7 @@
 	("gtd.org" :maxlevel . 3)
       	("someday.org" :level . 1)
       	("tickler.org" :maxlevel . 2)
+	("inbox.org" :maxlevel . 2)
 	)))
 
 (provide 'my-org-config)
