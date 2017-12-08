@@ -28,6 +28,9 @@
 (setq org-gtd-inbox-file (concat org-directory "inbox.org"))
 (setq org-gtd-tickler-file (concat org-directory "tickler.org"))
 
+;; Stick archive files in their own directory
+(setq org-archive-location "./archive/archive.org::* From %s")
+
 ;; Mobile Org Config
 ;; See: http://orgmode.org/manual/MobileOrg.html#MobileOrg
 
