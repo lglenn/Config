@@ -52,7 +52,7 @@
 (setq org-log-into-drawer "LOGBOOK")
 
 (setq org-capture-templates '(("t" "Todo [inbox]" entry
-                              (file+headline org-gtd-inbox-file "Tasks")
+                              (file+headline org-gtd-inbox-file "Inbox")
                                "* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
                               ("T" "Tickler" entry
                                (file+headline org-gtd-tickler-file "Tickler")
