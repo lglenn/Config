@@ -1,4 +1,10 @@
 ;;; Org-mode
+
+;; Use abbrev-mode
+(add-hook 'org-mode-hook (lambda () (abbrev-mode)))
+
+
+;; Pretty Bullets
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
