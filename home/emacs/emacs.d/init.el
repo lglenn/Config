@@ -14,7 +14,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
 
-;;; Prevent custom from pooping in ~/.emacs
+;;; Prevent custom from pooping in this file
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
