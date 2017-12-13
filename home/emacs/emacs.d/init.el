@@ -46,3 +46,6 @@
 
 ;;; My org-mode config
 (require 'my-org-config)
+
+;;; Use abbrev mode for text
+(add-hook 'text-mode-hook (lambda () (abbrev-mode)))
