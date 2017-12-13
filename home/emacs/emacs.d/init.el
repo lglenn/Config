@@ -1,4 +1,6 @@
 
+(add-to-list 'load-path "~/.emacs.d/site-lisp/")
+
 ;;; MELPA
 
 (require 'package)
@@ -11,8 +13,6 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
-
-(add-to-list 'load-path "~/.emacs.d/site-lisp/")
 
 ;;; Prevent custom from pooping in this file
 (setq custom-file "~/.emacs.d/custom.el")
