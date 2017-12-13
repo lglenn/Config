@@ -21,8 +21,9 @@
 		  "PLAN(p!)"
 		  "WAITING(w@/!)"
 		  "APPT(a!)"
-		  "|"
 		  "DEFERRED(d!)"
+		  "DELEGATED(e@)"
+		  "|"
 		  "CANCELLED(c@)"
 		  "DONE(D!)")))
 
