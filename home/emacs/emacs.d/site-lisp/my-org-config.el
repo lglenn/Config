@@ -23,6 +23,7 @@
 		  "APPT(a!)"
 		  "DEFERRED(d!)"
 		  "DELEGATED(e@)"
+		  "SCHEDULED(s!)"
 		  "|"
 		  "CANCELLED(c@)"
 		  "DONE(D!)")))
@@ -58,9 +59,12 @@
 ;; Log todo state changes
 (setq org-log-into-drawer "LOGBOOK")
 
-(setq org-capture-templates '(("t" "Todo [inbox]" entry
+(setq org-capture-templates '( ("t" "Todo [inbox]" entry
+				(file+headline org-gtd-inbox-file "Inbox")
+				"* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
+			       ("e" "Event [inbox]" entry
                               (file+headline org-gtd-inbox-file "Inbox")
-                               "* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
+			      "* APPT %^{Brief Description} %^g\nSCHEDULED1: %^T\n%?\nAdded: %U")
                               ("T" "Tickler" entry
                                (file+headline org-gtd-tickler-file "Tickler")
                                "* %i%? \n %U")))
