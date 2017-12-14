@@ -210,3 +210,7 @@ then
     eval "$(rbenv init -)"
 fi
 
+## Git
+
+alias g=git
+
