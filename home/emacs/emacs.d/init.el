@@ -18,7 +18,11 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
-;;; Misc settings
+;; Set location, because what good is a text editor if it doesn't know what
+;; time sunrise and sunset are?
+(setq calendar-latitude 40.7)
+(setq calendar-longitude -74.0)
+(setq calendar-location-name "New York, NY")
 
 ;; turn on syntax hilighting
 (global-font-lock-mode 1)
