@@ -3,6 +3,8 @@
 ;; Use abbrev-mode
 (add-hook 'org-mode-hook (lambda () (abbrev-mode)))
 
+;; Wrap lines
+(add-hook 'org-mode-hook (lambda () (visual-line-mode)))
 
 ;; Pretty Bullets
 (require 'org-bullets)
