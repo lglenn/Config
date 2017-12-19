@@ -34,7 +34,7 @@
 (setq org-log-done 'time)
 
 ;; Default location for org files
-(setq org-directory "~/SpiderOak Hive/gtd/")
+(setq org-directory "~/gtd/")
 (setq org-gtd-inbox-file (concat org-directory "inbox.org"))
 (setq org-gtd-tickler-file (concat org-directory "tickler.org"))
 
