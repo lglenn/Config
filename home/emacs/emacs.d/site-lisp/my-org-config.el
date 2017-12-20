@@ -37,6 +37,8 @@
 (setq org-directory "~/gtd/")
 (setq org-gtd-inbox-file (concat org-directory "inbox.org"))
 (setq org-gtd-tickler-file (concat org-directory "tickler.org"))
+(setq org-gtd-tasks-file (concat org-directory "gtd.org"))
+(setq org-gtd-mobile-inbox-file (concat org-directory "mobile-inbox.org"))
 
 ;; Stick archive files in their own directory
 (setq org-archive-location "./archive/archive.org::* From %s")
@@ -50,13 +52,14 @@
 ;; By default, files in org-agenda-files are included. Add other files by setting
 ;; org-mobile-files
 
-(setq org-mobile-inbox-for-pull (concat org-directory "mobile-inbox.org"))
+(setq org-mobile-inbox-for-pull org-gtd-mobile-inbox-file)
 
 ;; Ideas from https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
-(setq org-agenda-files (mapcar (lambda (e) (concat org-directory e)) '("inbox.org"
-								       "mobile-inbox.org"
-								       "gtd.org"
-								       "tickler.org")))
+(setq org-agenda-files (list
+			org-gtd-inbox-file
+			org-gtd-tickler-file
+			org-gtd-tasks-file
+			org-gtd-mobile-inbox-file))
 
 ;; Log todo state changes
 (setq org-log-into-drawer "LOGBOOK")
@@ -71,7 +74,7 @@
                                (file+headline org-gtd-tickler-file "Tickler")
                                "* %i%? \n %U")))
 
-(setq org-default-notes-file (concat org-directory "inbox.org"))
+(setq org-default-notes-file org-gtd-inbox-file)
 
 (setq org-refile-targets (mapcar (lambda (e) (cons (concat org-directory (car e)) (cdr e)))
       '(
