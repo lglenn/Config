@@ -64,12 +64,15 @@
 ;; Log todo state changes
 (setq org-log-into-drawer "LOGBOOK")
 
-(setq org-capture-templates '( ("t" "Todo [inbox]" entry
-				(file+headline org-gtd-inbox-file "Inbox")
-				"* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
-			       ("e" "Event [inbox]" entry
-                              (file+headline org-gtd-inbox-file "Inbox")
-			      "* APPT %^{Brief Description} %^g\nSCHEDULED1: %^T\n%?\nAdded: %U")
+(setq org-capture-templates '(("t" "Todo [inbox]" entry
+			       (file+headline org-gtd-inbox-file "Inbox")
+			       "* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
+			      ("p" "Todo [projects]" entry
+			       (file+headline org-gtd-tasks-file "Projects")
+			       "* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
+			      ("e" "Event [inbox]" entry
+			       (file+headline org-gtd-inbox-file "Inbox")
+			       "* APPT %^{Brief Description} %^g\nSCHEDULED1: %^T\n%?\nAdded: %U")
                               ("T" "Tickler" entry
                                (file+headline org-gtd-tickler-file "Tickler")
                                "* %i%? \n %U")))
