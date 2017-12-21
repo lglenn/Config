@@ -28,6 +28,7 @@
 		  "SCHEDULED(s!)"
 		  "|"
 		  "CANCELLED(c@)"
+		  "DUPE(u!)"
 		  "DONE(D!)")))
 
 
