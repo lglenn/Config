@@ -62,3 +62,18 @@
 
 ;;; Use abbrev mode for text
 (add-hook 'text-mode-hook (lambda () (abbrev-mode)))
+
+;;; Put backup files in their own space so they don't pollute their "home" directories.
+;; Stolen from http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html and slightly modified.
+
+(defun my-backup-file-name (path)
+  (let (
+	(backup_file_path (replace-regexp-in-string "//" "/" (concat "~/.emacs.d/backup/" path "~") ))
+	)
+    ;; Make the backup's directory if it does not exist.
+    (make-directory (file-name-directory backup_file_path) (file-name-directory backup_file_path))
+    backup_file_path
+    )
+  )
+
+(setq make-backup-file-name-function 'my-backup-file-name)
