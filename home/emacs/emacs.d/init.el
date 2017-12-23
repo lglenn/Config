@@ -67,11 +67,13 @@
 ;; Stolen from http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html and slightly modified.
 
 (defun my-backup-file-name (path)
-  (let (
-	(backup_file_path (replace-regexp-in-string "//" "/" (concat "~/.emacs.d/backup/" path "~") ))
+  (let* (
+	 (backup_root "~/.emacs.d/backup/")
+	 (backup_file_path (replace-regexp-in-string "//" "/" (concat backup_root path "~") ))
+	 (backup_dir (file-name-directory backup_file_path))
 	)
-    ;; Make the backup's directory if it does not exist.
-    (make-directory (file-name-directory backup_file_path) (file-name-directory backup_file_path))
+    ;; Side effect: make the backup's directory if it does not exist.
+    (make-directory backup_dir backup_dir)
     backup_file_path
     )
   )
