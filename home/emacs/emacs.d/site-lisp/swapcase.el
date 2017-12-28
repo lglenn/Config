@@ -7,6 +7,7 @@
   (insert c))
 
 (defun swapcase-after ()
+  (interactive)
   (replace-char-after-with (swapcase (char-after))))
 
 (provide 'swapcase)
