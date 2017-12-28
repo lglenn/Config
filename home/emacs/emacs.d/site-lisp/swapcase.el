@@ -4,7 +4,8 @@
 
 (defun replace-char-after-with (c)
   (delete-char 1)
-  (insert c))
+  (insert c)
+  (backward-char))
 
 (defun swapcase-after ()
   (interactive)
