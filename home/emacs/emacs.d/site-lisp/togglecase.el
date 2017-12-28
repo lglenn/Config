@@ -8,6 +8,7 @@
   (backward-char))
 
 (defun togglecase-after ()
+  "Toggle the case of the character after point. Point does not move. Does nothing if the character has no case."
   (interactive)
   (replace-char-after-with (togglecase (char-after))))
 
