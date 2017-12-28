@@ -63,9 +63,9 @@
 ;;; Use abbrev mode for text
 (add-hook 'text-mode-hook (lambda () (abbrev-mode)))
 
-;;; Swap case
-(require 'swapcase)
-(global-set-key (kbd "C-~") 'swapcase-after)
+;;; Toggle case
+(require 'togglecase)
+(global-set-key (kbd "C-~") 'togglecase-after)
 
 ;;; Put backup files in their own space so they don't pollute their "home" directories.
 ;; Stolen from http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html and slightly modified.

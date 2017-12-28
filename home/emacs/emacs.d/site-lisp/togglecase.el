@@ -1,4 +1,4 @@
-(defun swapcase (c)
+(defun togglecase (c)
   (let ((up (upcase c)))
     (if (= c up) (downcase c) up)))
 
@@ -7,8 +7,8 @@
   (insert c)
   (backward-char))
 
-(defun swapcase-after ()
+(defun togglecase-after ()
   (interactive)
-  (replace-char-after-with (swapcase (char-after))))
+  (replace-char-after-with (togglecase (char-after))))
 
-(provide 'swapcase)
+(provide 'togglecase)
