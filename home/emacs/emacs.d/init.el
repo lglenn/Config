@@ -5,7 +5,7 @@
 
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                    (not (gnutls-available-p))))
+>                    (not (gnutls-available-p))))
        (url (concat (if no-ssl "http" "https") "://melpa.org/packages/")))
   (add-to-list 'package-archives
 	       '("melpa-stable" . "https://stable.melpa.org/packages/") t))
@@ -62,6 +62,10 @@
 
 ;;; Use abbrev mode for text
 (add-hook 'text-mode-hook (lambda () (abbrev-mode)))
+
+;;; Swap case
+(require 'swapcase)
+(global-set-key (kbd "C-~") 'swapcase-after)
 
 ;;; Put backup files in their own space so they don't pollute their "home" directories.
 ;; Stolen from http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html and slightly modified.
