@@ -1,5 +1,8 @@
 ;;; Org-mode
 
+;; So bookmarklets work
+(require 'org-protocol)
+
 ;; Use abbrev-mode
 (add-hook 'org-mode-hook (lambda () (abbrev-mode)))
 
@@ -24,13 +27,13 @@
 		  "WAITING(w@/!)"
 		  "APPT(a!)"
 		  "DEFERRED(d!)"
-		  "DELEGATED(e@)"
+		  "DELEGATED(l@)"
 		  "SCHEDULED(s!)"
 		  "|"
 		  "CANCELLED(c@)"
+		  "EXPIRED(e!)"
 		  "DUPE(u!)"
 		  "DONE(D!)")))
-
 
 (setq org-log-done 'time)
 
