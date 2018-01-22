@@ -29,6 +29,10 @@
 
 ;;;; Modeline
 
+;; Use powerline
+(require 'powerline)
+(powerline-default-theme)
+
 ;; Show time
 (display-time)
 
