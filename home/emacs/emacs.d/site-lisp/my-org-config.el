@@ -65,6 +65,17 @@
 			org-gtd-tasks-file
 			org-gtd-mobile-inbox-file))
 
+;; Custom Agenda Views
+(setq org-agenda-custom-commands
+      '(("x" agenda)
+        ("y" agenda*)
+        ("w" todo "WAITING|DELEGATED")
+	("@" . "Special tag searches: @c: @coop @h: @home @s: @ssi @t: @techpanel @w: @work")
+	("@s" tags "+@ssi")
+        ("@w" tags "+@work")
+        ("@h" tags "+@home")
+        ("@c" tags "+@coop")
+        ("@t" tags "+@techpanel")))
 ;; Log todo state changes
 (setq org-log-into-drawer "LOGBOOK")
 
