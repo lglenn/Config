@@ -71,6 +71,9 @@
 (require 'togglecase)
 (global-set-key (kbd "C-~") 'togglecase-after)
 
+;;; Calc
+(global-set-key (kbd "M-+") 'calc)
+
 ;;; Put backup files in their own space so they don't pollute their "home" directories.
 ;; Stolen from http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html and slightly modified.
 
