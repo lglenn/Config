@@ -66,8 +66,16 @@
 			org-gtd-mobile-inbox-file))
 
 ;; Custom Agenda Views
+
+(defun skip-no-priority ()
+  (and
+   (not
+    (member (org-entry-get nil "PRIORITY") '("A" "C")))
+   (point-at-eol)))
+      
 (setq org-agenda-custom-commands
       '(("n" "Agenda and all TODOs" ((agenda "") (alltodo "")))
+	("p" "Agenda for items with non-default priority (A or C)" ((agenda "") (alltodo "")) ((org-agenda-skip-function 'skip-no-priority)))
 	("x" agenda)
         ("y" agenda*)
         ("w" todo "WAITING|DELEGATED")
@@ -77,6 +85,7 @@
         ("@h" tags "+@home")
         ("@c" tags "+@coop")
         ("@t" tags "+@techpanel")))
+
 ;; Log todo state changes
 (setq org-log-into-drawer "LOGBOOK")
 
