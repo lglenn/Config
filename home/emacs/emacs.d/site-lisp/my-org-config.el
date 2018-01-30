@@ -67,7 +67,8 @@
 
 ;; Custom Agenda Views
 (setq org-agenda-custom-commands
-      '(("x" agenda)
+      '(("n" "Agenda and all TODOs" ((agenda "") (alltodo "")))
+	("x" agenda)
         ("y" agenda*)
         ("w" todo "WAITING|DELEGATED")
 	("@" . "Special tag searches: @c: @coop @h: @home @s: @ssi @t: @techpanel @w: @work")
