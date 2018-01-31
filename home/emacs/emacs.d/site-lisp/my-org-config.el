@@ -94,7 +94,7 @@
 			       "* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
 			      ("p" "Todo [projects]" entry
 			       (file+headline org-gtd-tasks-file "Projects")
-			       "* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
+			       "* %^{Brief Description} [/] %^g\n%?\nAdded: %U")
 			      ("e" "Event [inbox]" entry
 			       (file+headline org-gtd-inbox-file "Inbox")
 			       "* APPT %^{Brief Description} %^g\nSCHEDULED: %^T\n%?\nAdded: %U")
