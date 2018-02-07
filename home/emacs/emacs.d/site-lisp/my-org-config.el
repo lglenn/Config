@@ -32,6 +32,7 @@
 		  "|"
 		  "CANCELLED(c@)"
 		  "EXPIRED(e!)"
+		  "GARBAGE(g)"
 		  "DUPE(u!)"
 		  "DONE(D!)")))
 
