@@ -45,6 +45,7 @@
 (setq org-gtd-tasks-file (concat org-directory "gtd.org"))
 (setq org-gtd-mobile-inbox-file (concat org-directory "mobile-inbox.org"))
 (setq meeting-notes-file "~/jet/MeetingNotes/meetings.org")
+(setq interviews-file "~/jet/People/Interviews/interviews.org")
 
 ;; Stick archive files in their own directory
 (setq org-archive-location "./archive/archive.org::* From %s")
@@ -102,6 +103,8 @@
 			       "* APPT %^{Brief Description} %^g\nSCHEDULED: %^T\n%?\nAdded: %U")
 			      ("m" "Meeting" entry (file+headline meeting-notes-file "Meetings")
 			       "* %^{Description}\n** Date: %^U\n** Attendees\n   - \n** Notes\n   - %?" :empty-lines 1)
+			      ("i" "Interview" entry (file+headline interviews-file "Interviews")
+			       "* %^{Candidate Name}\n** Date: %^U\n** Notes\n  - %?" :empty-lines 1)
 			      ("T" "Tickler" entry
                                (file+headline org-gtd-tickler-file "Tickler")
                                "* %i%? \n %U")))
