@@ -101,7 +101,7 @@
 			       (file+headline org-gtd-inbox-file "Inbox")
 			       "* APPT %^{Brief Description} %^g\nSCHEDULED: %^T\n%?\nAdded: %U")
 			      ("m" "Meeting" entry (file+headline meeting-notes-file "Meetings")
-			       "* %^{Description}\n** Date: %^U\n** Attendees\n   - \n** Notes\n   - %?")
+			       "* %^{Description}\n** Date: %^U\n** Attendees\n   - \n** Notes\n   - %?" :empty-lines 1)
 			      ("T" "Tickler" entry
                                (file+headline org-gtd-tickler-file "Tickler")
                                "* %i%? \n %U")))
