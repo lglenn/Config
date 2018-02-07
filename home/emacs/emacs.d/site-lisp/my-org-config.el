@@ -44,6 +44,7 @@
 (setq org-gtd-tickler-file (concat org-directory "tickler.org"))
 (setq org-gtd-tasks-file (concat org-directory "gtd.org"))
 (setq org-gtd-mobile-inbox-file (concat org-directory "mobile-inbox.org"))
+(setq meeting-notes-file "~/jet/MeetingNotes/meetings.org")
 
 ;; Stick archive files in their own directory
 (setq org-archive-location "./archive/archive.org::* From %s")
@@ -99,7 +100,9 @@
 			      ("e" "Event [inbox]" entry
 			       (file+headline org-gtd-inbox-file "Inbox")
 			       "* APPT %^{Brief Description} %^g\nSCHEDULED: %^T\n%?\nAdded: %U")
-                              ("T" "Tickler" entry
+			      ("m" "Meeting" entry (file+headline meeting-notes-file "Meetings")
+			       "* %^{Description}\n** Date: %^U\n** Attendees\n   - \n** Notes\n   - %?")
+			      ("T" "Tickler" entry
                                (file+headline org-gtd-tickler-file "Tickler")
                                "* %i%? \n %U")))
 
