@@ -93,3 +93,7 @@
   )
 
 (setq make-backup-file-name-function 'my-backup-file-name)
+
+;; OKR's
+(setq okr-file "~/jet/OKRs/2018/okrs.org")
+(global-set-key (kbd "C-M-g") (lambda () (interactive) (find-file okr-file)))
