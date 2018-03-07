@@ -99,5 +99,12 @@
   (lexical-let ((fn filename))
     (global-set-key (kbd keys) (let ((fn filename)) (lambda () (interactive) (find-file fn))))))
 
-(favefile "C-M-g" "~/jet/OKRs/2018/okrs.org")
-(favefile "M-*" "~/jet/People/Feedback/feedback.org")
+(defun favefiles (faves)
+     (mapc
+      (lambda (l)
+	(let ((k (car l))
+	      (f (nth 1 l)))
+	  (favefile k f))) faves))
+
+(favefiles '(("C-M-g" "~/jet/OKRs/2018/okrs.org")
+	     ("M-*" "~/jet/People/Feedback/feedback.org")))
