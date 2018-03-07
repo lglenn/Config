@@ -94,6 +94,10 @@
 
 (setq make-backup-file-name-function 'my-backup-file-name)
 
-;; OKR's
-(setq okr-file "~/jet/OKRs/2018/okrs.org")
-(global-set-key (kbd "C-M-g") (lambda () (interactive) (find-file okr-file)))
+;; Favorites
+(defun favefile (keys filename)
+  (lexical-let ((fn filename))
+    (global-set-key (kbd keys) (let ((fn filename)) (lambda () (interactive) (find-file fn))))))
+
+(favefile "C-M-g" "~/jet/OKRs/2018/okrs.org")
+(favefile "M-*" "~/jet/People/Feedback/feedback.org")
