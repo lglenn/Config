@@ -54,7 +54,8 @@
 (setq org-gtd-tasks-file (concat org-directory "gtd.org"))
 (setq org-gtd-mobile-inbox-file (concat org-directory "mobile-inbox.org"))
 (setq meeting-notes-file "~/jet/MeetingNotes/meetings.org")
-(setq interviews-file "~/jet/People/Interviews/interviews.org")
+(setq interviews-file "~/jet/People/Interviews/intexsrviews.org")
+(setq feedback-file "~/jet/People/Feedback/feedback.org")
 (setq drafts-file "~/jet/Drafts/drafts.org")
 
 ;; Stick archive files in their own directory
@@ -115,6 +116,8 @@
 			       "* %^{Description}\n** Date: %^U\n** Attendees\n   - \n** Notes\n   - %?" :empty-lines 1)
 			      ("i" "Interview" entry (file+headline interviews-file "Interviews")
 			       "* %^{Candidate Name}\n** Date: %^U\n** Notes\n  - %?" :empty-lines 1)
+			      ("f" "Feedback" entry (file+headline feedback-file "Feedback")
+			       "* %^{Person}\n** Date: %^U\n** Notes\n  - %?" :empty-lines 1)
 			      ("d" "Draft" entry (file+headline drafts-file "Drafts")
 			       "* %^{Subject}\n** Date: %^U\n** Notes\n%?" :empty-lines 1)
 			      ("T" "Tickler" entry
