@@ -19,7 +19,15 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 
-(setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("@coop" . ?c) ("@ssi" . ?s) ("@techpanel" . ?t)))
+(setq org-tag-alist '(
+		      ("@work" . ?w)
+		      ("@home" . ?h)
+		      ("@coop" . ?c)
+		      ("@ssi" . ?s)
+		      ("@techpanel" . ?t)
+		      ("@renovations" . ?r)
+		      ))
+      
 (setq org-tag-persistent-alist org-tag-alist)
 (setq org-todo-keywords
       '((sequence "TODO(t!)"
