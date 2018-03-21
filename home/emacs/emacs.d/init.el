@@ -95,6 +95,10 @@
 (setq make-backup-file-name-function 'my-backup-file-name)
 
 ;; Favorites
+(setq favorite-files '(("C-M-g" "~/jet/OKRs/2018/okrs.org")
+		       ("C-M-m" "~/jet/MeetingNotes/meetings.org")
+		       ("M-*" "~/jet/People/Feedback/feedback.org")))
+
 (defun favefile (keys filename)
   (lexical-let ((fn filename))
     (global-set-key (kbd keys) (let ((fn filename)) (lambda () (interactive) (find-file fn))))))
@@ -106,6 +110,4 @@
 	      (f (nth 1 l)))
 	  (favefile k f))) faves))
 
-(favefiles '(("C-M-g" "~/jet/OKRs/2018/okrs.org")
-	     ("C-M-m" "~/jet/MeetingNotes/meetings.org")
-	     ("M-*" "~/jet/People/Feedback/feedback.org")))
+(favefiles favorite-files)
