@@ -54,7 +54,7 @@
 (setq org-gtd-tasks-file (concat org-directory "gtd.org"))
 (setq org-gtd-mobile-inbox-file (concat org-directory "mobile-inbox.org"))
 (setq meeting-notes-file "~/jet/MeetingNotes/meetings.org")
-(setq interviews-file "~/jet/People/Interviews/intexsrviews.org")
+(setq interviews-file "~/jet/People/Interviews/interviews.org")
 (setq feedback-file "~/jet/People/Feedback/feedback.org")
 (setq drafts-file "~/jet/Drafts/drafts.org")
 
