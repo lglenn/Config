@@ -74,7 +74,6 @@
 
 ;; Ideas from https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
 (setq org-agenda-files (list
-			org-gtd-inbox-file
 			org-gtd-tickler-file
 			org-gtd-tasks-file
 			org-gtd-mobile-inbox-file))
