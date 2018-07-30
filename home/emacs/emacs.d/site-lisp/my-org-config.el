@@ -24,8 +24,6 @@
 		      ("@home" . ?h)
 		      ("@coop" . ?c)
 		      ("@ssi" . ?s)
-		      ("@techpanel" . ?t)
-		      ("@renovations" . ?r)
 		      ))
       
 (setq org-tag-persistent-alist org-tag-alist)
