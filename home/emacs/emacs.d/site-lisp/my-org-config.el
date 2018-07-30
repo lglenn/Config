@@ -23,6 +23,7 @@
 		      ("@work" . ?w)
 		      ("@home" . ?h)
 		      ("@coop" . ?c)
+		      ("@laptop" . ?l)
 		      ("@ssi" . ?s)
 		      ))
       
