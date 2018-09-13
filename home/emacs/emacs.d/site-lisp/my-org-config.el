@@ -115,7 +115,7 @@
 			      ("i" "Interview" entry (file+headline interviews-file "Interviews")
 			       "* %^{Candidate Name}\n** Date: %^U\n** Notes\n  - %?" :empty-lines 1)
 			      ("f" "Feedback" entry (file+headline feedback-file "Feedback")
-			       "* %^{Person}\n** Date: %^U\n** Notes\n  - %?" :empty-lines 1)
+			       "* %^{Person}\n:PROPERTIES:\n:person: %\\1\n:END:\n** Date: %^U\n** Notes\n  - %?" :empty-lines 1)
 			      ("d" "Draft" entry (file+headline drafts-file "Drafts")
 			       "* %^{Subject}\n** Date: %^U\n** Notes\n%?" :empty-lines 1)
 			      ("T" "Tickler" entry
