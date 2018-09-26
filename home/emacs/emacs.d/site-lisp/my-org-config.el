@@ -48,10 +48,11 @@
 
 ;; Default location for org files
 (setq org-directory "~/gtd/")
-(setq org-gtd-inbox-file (concat org-directory "inbox.org"))
-(setq org-gtd-tickler-file (concat org-directory "tickler.org"))
+(setq org-ancillary-directory (concat org-directory "ancillary/"))
+(setq org-gtd-inbox-file (concat org-ancillary-directory "inbox.org"))
+(setq org-gtd-tickler-file (concat org-ancillary-directory "tickler.org"))
 (setq org-gtd-tasks-file (concat org-directory "gtd.org"))
-(setq org-gtd-mobile-inbox-file (concat org-directory "mobile-inbox.org"))
+(setq org-gtd-mobile-inbox-file (concat org-ancillary-directory "mobile-inbox.org"))
 (setq meeting-notes-file "~/jet/MeetingNotes/meetings.org")
 (setq interviews-file "~/jet/People/Interviews/interviews.org")
 (setq feedback-file "~/jet/People/Feedback/feedback.org")
