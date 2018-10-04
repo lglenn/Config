@@ -133,7 +133,4 @@
 	("inbox.org" :maxlevel . 2)
 	)))
 
-;; Pull up drafts quickly
-(global-set-key (kbd "C-c C-d") (lambda () (interactive) (find-file drafts-file)))
-
 (provide 'my-org-config)

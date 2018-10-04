@@ -95,7 +95,8 @@
 (setq make-backup-file-name-function 'my-backup-file-name)
 
 ;; Favorites
-(setq favorite-files '(("C-M-g" "~/jet/OKRs/2018/okrs.org")))
+(setq favorite-files '(("C-M-g" "~/jet/OKRs/2018/okrs.org")
+		       ("C-c C-d" "~/jet/Drafts/drafts.org")))
 
 (setq favorite-files-readonly '(("C-M-m" "~/jet/MeetingNotes/meetings.org")
 				("M-*" "~/jet/People/Feedback/feedback.org")))
