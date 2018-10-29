@@ -128,9 +128,9 @@
 (setq org-refile-targets (mapcar (lambda (e) (cons (concat org-directory (car e)) (cdr e)))
       '(
 	("gtd.org" :maxlevel . 3)
-      	("someday.org" :level . 1)
-      	("tickler.org" :maxlevel . 2)
-	("inbox.org" :maxlevel . 2)
+      	("ancillary/someday.org" :level . 1)
+      	("ancillary/tickler.org" :maxlevel . 2)
+	("ancillary/inbox.org" :maxlevel . 2)
 	)))
 
 (provide 'my-org-config)
