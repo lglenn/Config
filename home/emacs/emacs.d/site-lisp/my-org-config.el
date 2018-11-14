@@ -57,6 +57,7 @@
 (setq interviews-file "~/jet/People/Interviews/interviews.org")
 (setq feedback-file "~/jet/People/Feedback/feedback.org")
 (setq drafts-file "~/jet/Drafts/drafts.org")
+(setq glossary-file "~/jet/Glossary/glossary.org")
 
 ;; Stick archive files in their own directory
 (setq org-archive-location "./archive/archive.org::* From %s")
@@ -119,6 +120,8 @@
 			       "* %^{Person}\n:PROPERTIES:\n:person: %\\1\n:END:\n** Date: %^U\n** Notes\n  - %?" :empty-lines 1)
 			      ("d" "Draft" entry (file+headline drafts-file "Drafts")
 			       "* %^{Subject}\n** Date: %^U\n** Notes\n%?" :empty-lines 1)
+            ("g" "Glossary" entry (file+headline glossary-file "Glossary")
+			       "** %^{Term}\n:PROPERTIES:\n:term %\\1\n:END:\n %?" :empty-lines 1)
 			      ("T" "Tickler" entry
                                (file+headline org-gtd-tickler-file "Tickler")
                                "* %i%? \n %U")))
