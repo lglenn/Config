@@ -45,6 +45,16 @@
 ;; Dedupe command history
 (setq history-delete-duplicates t)
 
+;; Evil
+
+;; Use it by default
+(require 'evil)
+  (evil-mode 1)
+
+;; surround
+(require 'evil-surround)
+    (global-evil-surround-mode 1)
+
 ;; Ivy for completion
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
