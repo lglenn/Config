@@ -55,9 +55,6 @@
 (require 'evil-surround)
     (global-evil-surround-mode 1)
 
-;; Org mode bindings for evil
-(require 'org-evil)
-
 ;; Ivy for completion
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
