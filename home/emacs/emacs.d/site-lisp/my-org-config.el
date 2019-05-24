@@ -3,6 +3,9 @@
 ;; So bookmarklets work
 (require 'org-protocol)
 
+;; Show entries from the emacs diary in agenda by default
+(setq org-agenda-include-diary t)
+
 ;; Use abbrev-mode
 (add-hook 'org-mode-hook (lambda () (abbrev-mode)))
 
