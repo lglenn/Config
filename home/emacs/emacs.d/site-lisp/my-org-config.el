@@ -25,9 +25,7 @@
 (setq org-tag-alist '(
 		      ("@work" . ?w)
 		      ("@home" . ?h)
-		      ("@coop" . ?c)
 		      ("@laptop" . ?l)
-		      ("@ssi" . ?s)
 		      ))
       
 (setq org-tag-persistent-alist org-tag-alist)
