@@ -110,9 +110,6 @@
 			      ("p" "Todo [projects]" entry
 			       (file+headline org-gtd-tasks-file "Projects")
 			       "* %^{Brief Description} [/] %^g\n%?\nAdded: %U")
-			      ("e" "Event [inbox]" entry
-			       (file+headline org-gtd-inbox-file "Inbox")
-			       "* APPT %^{Brief Description} %^g\nSCHEDULED: %^T\n%?\nAdded: %U")
 			      ("m" "Meeting" entry (file+headline meeting-notes-file "Meetings")
 			       "* %^{Description}\n** Date: %^U\n** Attendees\n   - \n** Notes\n   - %?" :empty-lines 1)
 			      ("i" "Interview" entry (file+headline interviews-file "Interviews")
