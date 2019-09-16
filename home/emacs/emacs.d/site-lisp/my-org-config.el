@@ -122,7 +122,7 @@
 			       "** %^{Term}\n:PROPERTIES:\n:term %\\1\n:END:\n %?" :empty-lines 1)
 			      ("T" "Tickler" entry
                                (file+headline org-gtd-tickler-file "Tickler")
-                               "* %i%? \n %U")))
+                               "* TODO %^{Brief Description} %^g\n%?\nAdded: %U")))
 
 (setq org-default-notes-file org-gtd-inbox-file)
 
