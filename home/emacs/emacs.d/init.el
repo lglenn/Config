@@ -1,4 +1,7 @@
 
+;;; Make LaTeX available
+(setenv "PATH" "$PATH:/Library/TeX/texbin/" t)
+
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
 
 ;;; MELPA
