@@ -59,6 +59,7 @@
 (setq feedback-file "~/jet/People/Feedback/feedback.org")
 (setq drafts-file "~/jet/Drafts/drafts.org")
 (setq glossary-file (concat org-directory "glossary.org"))
+(setq coach-file (concat org-directory "coach.org"))
 
 ;; Stick archive files in their own directory
 (setq org-archive-location "./archive/archive.org::* From %s")
@@ -120,6 +121,7 @@
                                "* %^{Subject}\n** Date: %^U\n** Notes\n%?" :empty-lines 1)
                               ("g" "Glossary" entry (file+headline glossary-file "Glossary")
                                "** %^{Term}\n:PROPERTIES:\n:term %\\1\n:END:\n %?" :empty-lines 1)
+                              ("c" "Coaching Observation" entry (file+headline coach-file "Capture") "** %?\n")
                               ("T" "Tickler" entry
                                (file+headline org-gtd-tickler-file "Tickler")
                                "* TODO %^{Brief Description} %^g\n%?\nAdded: %U")))
