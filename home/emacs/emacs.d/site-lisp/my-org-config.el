@@ -58,7 +58,7 @@
 (setq interviews-file "~/jet/People/Interviews/interviews.org")
 (setq feedback-file "~/jet/People/Feedback/feedback.org")
 (setq drafts-file "~/jet/Drafts/drafts.org")
-(setq glossary-file "~/Dropbox/org/glossary.org")
+(setq glossary-file (concat org-directory "glossary.org"))
 
 ;; Stick archive files in their own directory
 (setq org-archive-location "./archive/archive.org::* From %s")
