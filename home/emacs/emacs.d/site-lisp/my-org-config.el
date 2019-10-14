@@ -108,6 +108,9 @@
 (setq org-capture-templates '(("t" "Todo [inbox]" entry
                                (file+headline org-gtd-inbox-file "Inbox")
                                "* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
+                              ("e" "Express Todo (straight to Tasks -- write well!)" entry
+                               (file+headline org-gtd-tasks-file "Tasks")
+                               "* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
                               ("p" "Todo [projects]" entry
                                (file+headline org-gtd-tasks-file "Projects")
                                "* %^{Brief Description} [/] %^g\n%?\nAdded: %U")
