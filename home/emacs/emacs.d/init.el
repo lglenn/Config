@@ -121,9 +121,9 @@
 (defun favefiles (faves open-fn)
      (mapc
       (lambda (l)
-	(let ((k (car l))
-	      (f (nth 1 l)))
-	  (favefile k f open-fn))) faves))
+	(let ((key-combo (car l))
+	      (filename (nth 1 l)))
+	  (favefile key-combo filename open-fn))) faves))
 
 (favefiles favorite-files 'find-file)
 (favefiles favorite-files-readonly 'find-file-read-only)
