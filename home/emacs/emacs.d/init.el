@@ -116,7 +116,7 @@
 
 (defun favefile (keys filename open-fn)
   (lexical-let ((fn filename) (opener open-fn))
-    (global-set-key (kbd keys) (let ((fn filename)) (lambda () (interactive) (funcall opener fn))))))
+    (global-set-key (kbd keys) (lambda () (interactive) (funcall opener fn)))))
 
 (defun favefiles (faves open-fn)
      (mapc
