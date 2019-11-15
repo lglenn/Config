@@ -109,21 +109,20 @@
 
 ;; Favorites
 (setq favorite-files '(("C-M-g" "~/jet/OKRs/2018/okrs.org")
-		       ("C-c C-d" "~/jet/Drafts/drafts.org")))
-
-(setq favorite-files-readonly '(("C-M-m" "~/jet/MeetingNotes/meetings.org")
-				("M-*" "~/jet/People/Feedback/feedback.org")))
+                       ("C-c C-d" "~/jet/Drafts/drafts.org")
+                       ("C-M-m" "~/jet/MeetingNotes/meetings.org" t)
+                       ("M-*" "~/jet/People/Feedback/feedback.org" t)))
 
 (defun favefile (keys filename open-fn)
   (lexical-let ((fn filename) (opener open-fn))
     (global-set-key (kbd keys) (lambda () (interactive) (funcall opener fn)))))
 
-(defun favefiles (faves open-fn)
+(defun favefiles (faves)
      (mapc
       (lambda (l)
 	(let ((key-combo (car l))
-	      (filename (nth 1 l)))
-	  (favefile key-combo filename open-fn))) faves))
+	      (filename (nth 1 l))
+        (readonly (nth 2 l)))
+	  (favefile key-combo filename (if readonly 'find-file-read-only 'find-file)))) faves))
 
-(favefiles favorite-files 'find-file)
-(favefiles favorite-files-readonly 'find-file-read-only)
+(favefiles favorite-files)
