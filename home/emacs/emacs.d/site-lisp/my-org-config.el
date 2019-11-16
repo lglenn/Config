@@ -103,11 +103,10 @@
 
 ;; Default location for org files
 (setq org-directory "~/gtd/")
-(setq org-ancillary-directory (concat org-directory "ancillary/"))
-(setq org-gtd-inbox-file (concat org-ancillary-directory "inbox.org"))
-(setq org-gtd-tickler-file (concat org-ancillary-directory "tickler.org"))
+(setq org-gtd-inbox-file (concat org-directory "inbox.org"))
+(setq org-gtd-tickler-file (concat org-directory "tickler.org"))
 (setq org-gtd-tasks-file (concat org-directory "gtd.org"))
-(setq org-gtd-mobile-inbox-file (concat org-ancillary-directory "mobile-inbox.org"))
+(setq org-gtd-mobile-inbox-file (concat org-directory "mobile-inbox.org"))
 (setq meeting-notes-file "~/jet/MeetingNotes/meetings.org")
 (setq interviews-file "~/jet/People/Interviews/interviews.org")
 (setq feedback-file "~/jet/People/Feedback/feedback.org")
@@ -188,9 +187,9 @@
 (setq org-refile-targets (mapcar (lambda (e) (cons (concat org-directory (car e)) (cdr e)))
                                  '(
                                    ("gtd.org" :maxlevel . 3)
-                                   ("ancillary/someday.org" :level . 1)
-                                   ("ancillary/tickler.org" :maxlevel . 2)
-                                   ("ancillary/inbox.org" :maxlevel . 2)
+                                   ("someday.org" :level . 1)
+                                   ("tickler.org" :maxlevel . 2)
+                                   ("inbox.org" :maxlevel . 2)
                                    )))
 
 (provide 'my-org-config)
