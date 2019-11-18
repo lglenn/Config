@@ -106,7 +106,6 @@
 (setq org-gtd-inbox-file (concat org-directory "inbox.org"))
 (setq org-gtd-tickler-file (concat org-directory "tickler.org"))
 (setq org-gtd-tasks-file (concat org-directory "gtd.org"))
-(setq org-gtd-mobile-inbox-file (concat org-directory "mobile-inbox.org"))
 (setq meeting-notes-file "~/jet/MeetingNotes/meetings.org")
 (setq interviews-file "~/jet/People/Interviews/interviews.org")
 (setq feedback-file "~/jet/People/Feedback/feedback.org")
@@ -117,22 +116,10 @@
 ;; Stick archive files in their own directory
 (setq org-archive-location "./archive/archive.org::* From %s")
 
-;; Mobile Org Config
-;; See: http://orgmode.org/manual/MobileOrg.html#MobileOrg
-
-;; Mobile files are exchanged here.
-(setq org-mobile-directory "~/Dropbox (Personal)/Apps/MobileOrg")
-
-;; By default, files in org-agenda-files are included. Add other files by setting
-;; org-mobile-files
-
-(setq org-mobile-inbox-for-pull org-gtd-mobile-inbox-file)
-
 ;; Ideas from https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
 (setq org-agenda-files (list
                          org-gtd-tickler-file
-                         org-gtd-tasks-file
-                         org-gtd-mobile-inbox-file))
+                         org-gtd-tasks-file))
 
 ;; Custom Agenda Views
 
