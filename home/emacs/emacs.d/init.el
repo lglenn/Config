@@ -52,7 +52,7 @@
 
 ;; Use it by default
 (require 'evil)
-  (evil-mode 1)
+  (evil-mode 0)
 
 ;; surround
 (require 'evil-surround)
