@@ -71,6 +71,8 @@
 (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
 (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
 
+(all-the-icons-ivy-setup)
+
 ;;; Git
 (require 'git)
 
