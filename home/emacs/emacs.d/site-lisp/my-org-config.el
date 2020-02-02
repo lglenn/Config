@@ -80,6 +80,7 @@
                       ("@work" . ?w)
                       ("@home" . ?h)
                       ("@laptop" . ?l)
+                      ("@bermuda" . ?b)
                       ))
 
 (setq org-tag-persistent-alist org-tag-alist)
