@@ -21,6 +21,10 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
+;;; Use environment variables from the shell
+(when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize))
+
 ;; Set location, because what good is a text editor if it doesn't know what
 ;; time sunrise and sunset are?
 (setq calendar-latitude 40.7)
