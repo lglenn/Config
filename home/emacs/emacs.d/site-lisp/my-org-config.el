@@ -172,12 +172,14 @@
 
 (setq org-default-notes-file org-gtd-inbox-file)
 
-(setq org-refile-targets (cons '(nil . (:level . 1)) (mapcar (lambda (e) (cons (concat org-directory (car e)) (cdr e)))
-                                 '(
-                                   ("gtd.org" :maxlevel . 3)
-                                   ("someday.org" :level . 1)
-                                   ("tickler.org" :maxlevel . 2)
-                                   ("inbox.org" :maxlevel . 2)
-                                   ))))
+(setq org-refile-targets (cons
+                           '(nil . (:level . 1))
+                           (mapcar (lambda (e) (cons (concat org-directory (car e)) (cdr e)))
+                                   '(
+                                     ("gtd.org" :maxlevel . 3)
+                                     ("someday.org" :level . 1)
+                                     ("tickler.org" :maxlevel . 2)
+                                     ("inbox.org" :maxlevel . 2)
+                                     ))))
 
 (provide 'my-org-config)
