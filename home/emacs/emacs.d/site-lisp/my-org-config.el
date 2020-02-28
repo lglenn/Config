@@ -178,10 +178,8 @@
                                    ("someday.org" :level . 1)
                                    ("tickler.org" :maxlevel . 2)
                                    ("inbox.org" :maxlevel . 2))))
-
         (defun prepend-directory (e)
           (cons (concat org-directory (car e)) (cdr e)))
-
         (cons this-file (mapcar 'prepend-directory refile-target-files))))
 
 (provide 'my-org-config)
