@@ -173,13 +173,16 @@
 (setq org-default-notes-file org-gtd-inbox-file)
 
 (setq org-refile-targets 
-      (let ((this-file '(nil . (:level . 1)))
-            (refile-target-files '(("gtd.org" :maxlevel . 3)
+      (let ((refile-target-files '((nil :level . 1)
+                                   ("gtd.org" :maxlevel . 3)
                                    ("someday.org" :level . 1)
                                    ("tickler.org" :maxlevel . 2)
                                    ("inbox.org" :maxlevel . 2)))
-            (prepend-directory (lambda (e) 
-                                 (cons (concat org-directory (car e)) (cdr e)))))
-        (cons this-file (mapcar prepend-directory refile-target-files))))
+            (prepend-directory-if-string
+              (lambda (e) 
+                (if (stringp (car e))
+                  (cons (concat org-directory (car e)) (cdr e))
+                  e))))
+        (mapcar prepend-directory-if-string refile-target-files)))
 
 (provide 'my-org-config)
