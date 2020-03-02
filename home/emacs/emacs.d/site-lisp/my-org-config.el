@@ -1,4 +1,4 @@
-;;; Org-mode
+2;;; Org-mode
 
 ;; So bookmarklets work
 (require 'org-protocol)
