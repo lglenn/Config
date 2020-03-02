@@ -104,15 +104,13 @@
 
 (let
     ((org-directory "~/gtd/")
-     (work-directory "~/jet/"))
-  (let
-     ((gtd-inbox-file (concat org-directory "inbox.org"))
-     (gtd-tickler-file (concat org-directory "tickler.org"))
-     (gtd-tasks-file (concat org-directory "gtd.org"))
-     (meeting-notes-file (concat work-directory "MeetingNotes/meetings.org"))
-     (interviews-file (concat work-directory "People/Interviews/interviews.org"))
-     (feedback-file (concat work-directory "People/Feedback/feedback.org"))
-     (drafts-file (concat work-directory "Drafts/drafts.org"))
+     (org-gtd-inbox-file (concat org-directory "inbox.org"))
+     (org-gtd-tickler-file (concat org-directory "tickler.org"))
+     (org-gtd-tasks-file (concat org-directory "gtd.org"))
+     (meeting-notes-file "~/jet/MeetingNotes/meetings.org")
+     (interviews-file "~/jet/People/Interviews/interviews.org")
+     (feedback-file "~/jet/People/Feedback/feedback.org")
+     (drafts-file "~/jet/Drafts/drafts.org")
      (glossary-file (concat org-directory "glossary.org"))
      (coach-file (concat org-directory "coach.org"))
      (refile-targets '((nil :level . 1)
@@ -126,8 +124,8 @@
 
   ;; Ideas from https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
   (setq org-agenda-files (list
-                          gtd-tickler-file
-                          gtd-tasks-file))
+                          org-gtd-tickler-file
+                          org-gtd-tasks-file))
 
   ;; Custom Agenda Views
 
@@ -154,13 +152,13 @@
   (setq org-log-into-drawer "LOGBOOK")
 
   (setq org-capture-templates '(("t" "Todo [inbox]" entry
-				 (file+headline gtd-inbox-file "Inbox")
+				 (file+headline org-gtd-inbox-file "Inbox")
 				 "* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
 				("e" "Express Todo (straight to Tasks -- write well!)" entry
-				 (file+headline gtd-tasks-file "Tasks")
+				 (file+headline org-gtd-tasks-file "Tasks")
 				 "* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
 				("p" "Todo [projects]" entry
-				 (file+headline gtd-tasks-file "Projects")
+				 (file+headline org-gtd-tasks-file "Projects")
 				 "* %^{Brief Description} [/] %^g\n%?\nAdded: %U")
 				("m" "Meeting" entry (file+headline meeting-notes-file "Meetings")
 				 "* %^{Description}\n** Date: %^U\n** Attendees\n   - \n** Notes\n   - %?" :empty-lines 1)
@@ -174,10 +172,10 @@
 				 "** %^{Term}\n:PROPERTIES:\n:term %\\1\n:END:\n %?" :empty-lines 1)
 				("c" "Coaching Observation" entry (file+headline coach-file "Capture") "** %?\n")
 				("T" "Tickler" entry
-				 (file+headline gtd-tickler-file "Tickler")
+				 (file+headline org-gtd-tickler-file "Tickler")
 				 "* TODO %^{Brief Description} %^g\n%?\nAdded: %U")))
 
-  (setq org-default-notes-file gtd-inbox-file)
+  (setq org-default-notes-file org-gtd-inbox-file)
 
   (setq org-refile-targets 
 	(let ((prepend-directory-if-string
@@ -187,6 +185,6 @@
 		       (let ((path (concat org-directory file)))
 			 (cons path (cdr target)))
                      target)))))
-              (mapcar prepend-directory-if-string refile-targets)))))
+              (mapcar prepend-directory-if-string refile-targets))))
 
 (provide 'my-org-config)
