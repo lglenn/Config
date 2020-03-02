@@ -1,4 +1,4 @@
-;;; Org-mode
+2;;; Org-mode
 
 ;; So bookmarklets work
 (require 'org-protocol)
@@ -173,16 +173,18 @@
 (setq org-default-notes-file org-gtd-inbox-file)
 
 (setq org-refile-targets 
-      (let ((refile-target-files '((nil :level . 1)
+      (let ((refile-targets '((nil :level . 1)
                                    ("gtd.org" :maxlevel . 3)
                                    ("someday.org" :level . 1)
                                    ("tickler.org" :maxlevel . 2)
                                    ("inbox.org" :maxlevel . 2)))
             (prepend-directory-if-string
-             (lambda (e) 
-               (if (stringp (car e))
-                   (cons (concat org-directory (car e)) (cdr e))
-                 e))))
-        (mapcar prepend-directory-if-string refile-target-files)))
+             (lambda (target)
+	       (let ((file (car target)))
+		 (if (stringp file)
+		     (let ((path (concat org-directory file)))
+		       (cons path (cdr target)))
+                   target))))
+        (mapcar prepend-directory-if-string refile-targets)))
 
 (provide 'my-org-config)
