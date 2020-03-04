@@ -196,10 +196,12 @@
 					 (cons tickler '(:maxlevel . 2))
 					 (cons inbox '(:maxlevel . 2))))
 	      (prepend-directory-if-string
-	       (lambda (e) 
-		 (if (stringp (car e))
-                     (cons (concat org-directory (car e)) (cdr e))
-                   e))))
+	       (lambda (e)
+		 (let ((file (car e))
+		       (params (cdr e)))
+		   (if (stringp file)
+                       (cons (concat org-directory file) params)
+                     e)))))
           (mapcar prepend-directory-if-string refile-target-files))))
 
 (provide 'my-org-config)
