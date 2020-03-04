@@ -199,9 +199,9 @@
 	       (lambda (e)
 		 (let ((file (car e))
 		       (params (cdr e)))
-		   (if (stringp file)
-                       (cons (concat org-directory file) params)
-                     e)))))
+		   (cond ((stringp file)
+			  (cons (concat org-directory file) params))
+			 (t e))))))
           (mapcar prepend-directory-if-string refile-target-files))))
 
 (provide 'my-org-config)
