@@ -160,3 +160,5 @@
 (require 'doom-modeline)
 (doom-modeline-mode 1)
 
+;; Use Magit
+(global-set-key (kbd "C-x g") 'magit-status)
