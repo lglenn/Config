@@ -164,7 +164,7 @@
 				     '"* %^{Brief Description} [/] %^g\n%?\nAdded: %U")
 			       (list '"m" '"Meeting" 'entry
 				     (list 'file+headline meeting-notes-file '"Meetings")
-				     '"* %^{Description}\n** Date: %^U\n** Attendees\n   - \n** Notes\n   - %?"
+				     '"* %^{Description}\n** Date: %^U\n** Attendees\n   - \n** Notes\n   - %? \n** To-Do's\n"
 				     ':empty-lines '1)
 			       (list '"i" '"Interview" 'entry
 				     (list 'file+headline interviews-file '"Interviews")
