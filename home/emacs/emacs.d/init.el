@@ -80,6 +80,9 @@
 ;;; Git
 (require 'git)
 
+;; Use Magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
 ;;; My org-mode config
 (require 'my-org-config)
 
@@ -159,6 +162,3 @@
 
 (require 'doom-modeline)
 (doom-modeline-mode 1)
-
-;; Use Magit
-(global-set-key (kbd "C-x g") 'magit-status)
