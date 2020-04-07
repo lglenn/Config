@@ -133,7 +133,7 @@
 
 ;; Ideas from https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html and modified
 (let* ((org-directory "~/gtd/")
-       (work-directory "~/jet/")
+       (work-directory "~/walmart/")
        (inbox "inbox.org")
        (tickler "tickler.org")
        (someday "someday.org")

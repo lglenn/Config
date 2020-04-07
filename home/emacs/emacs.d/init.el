@@ -117,10 +117,13 @@
 (setq make-backup-file-name-function 'my-backup-file-name)
 
 ;; Favorites
-(setq favorite-files '(("C-M-g" "~/jet/OKRs/2018/okrs.org")
-                       ("C-c C-d" "~/jet/Drafts/drafts.org")
-                       ("C-M-m" "~/jet/MeetingNotes/meetings.org" t)
-                       ("M-*" "~/jet/People/Feedback/feedback.org" t)))
+
+(setq work-home-dir "~/walmart/")
+
+(setq favorite-files '(("C-M-g" (concat work-home-dir "OKRs/2018/okrs.org"))
+                       ("C-c C-d" (concat work-home-dir "Drafts/drafts.org"))
+                       ("C-M-m" (concat work-home-dir "MeetingNotes/meetings.org" t))
+                       ("M-*" (concat work-home-dir "~/jet/People/Feedback/feedback.org" t))))
 
 (defun favefile (keys filename open-fn)
   (lexical-let ((fn filename) (opener open-fn))
