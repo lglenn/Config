@@ -86,12 +86,8 @@
 (setq org-tag-persistent-alist org-tag-alist)
 (setq org-todo-keywords
       '((sequence "TODO(t!)"
-                  "PLAN(p!)"
                   "WAITING(w@/!)"
-                  "APPT(a!)"
-                  "DEFERRED(d!)"
                   "DELEGATED(l@)"
-                  "SCHEDULED(s!)"
                   "|"
                   "CANCELLED(c@)"
                   "EXPIRED(e!)"
