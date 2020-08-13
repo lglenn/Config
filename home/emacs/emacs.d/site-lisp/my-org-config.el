@@ -152,9 +152,6 @@
 			       (list '"t" '"Todo [inbox]" 'entry
 				     (list 'file+headline gtd-inbox-file '"Inbox")
 				     '"* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
-			       (list '"e" '"Express Todo (straight to Tasks -- write well!)" 'entry
-				     (list 'file+headline gtd-tasks-file '"Tasks")
-				     '"* TODO %^{Brief Description} %^g\n%?\nAdded: %U")
 			       (list '"p" '"Todo [projects]" 'entry
 				     (list 'file+headline gtd-tasks-file '"Projects")
 				     '"* %^{Brief Description} [/] %^g\n%?\nAdded: %U")
