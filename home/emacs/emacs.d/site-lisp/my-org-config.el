@@ -173,7 +173,7 @@
 				     ':empty-lines '1)
 			       (list '"g" '"Glossary" 'entry
 				     (list 'file+headline glossary-file '"Glossary")
-				     '"** %^{Term}\n:PROPERTIES:\n:term %\\1\n:END:\n %?"
+				     '"** %^{Term}\n:PROPERTIES:\n:term: %\\1\n:END:\n %?"
 				     ':empty-lines '1)
 			       (list '"c" '"Coaching Observation" 'entry
 				     (list 'file+headline coach-file '"Capture")
