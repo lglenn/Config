@@ -155,6 +155,9 @@
 			       (list '"p" '"Todo [projects]" 'entry
 				     (list 'file+headline gtd-tasks-file '"Projects")
 				     '"* %^{Brief Description} [/] %^g\n%?\nAdded: %U")
+			       (list '"P" '"Todo [serial projects]" 'entry
+				     (list 'file+headline gtd-tasks-file '"Serial Projects")
+				     '"* %^{Brief Description} [%] %^g\n** TODO %?\nAdded: %U")
 			       (list '"m" '"Meeting" 'entry
 				     (list 'file+headline meeting-notes-file '"Meetings")
 				     '"* %^{Description}\n** Date: %^U\n** Attendees\n   - \n** Notes\n   - %? \n** To-Do's\n"
