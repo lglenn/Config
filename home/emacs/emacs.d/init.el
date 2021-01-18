@@ -120,25 +120,6 @@
 
 (setq work-home-dir "~/walmart/")
 
-(setq favorite-files '(("C-M-g" (concat work-home-dir "OKRs/2018/okrs.org"))
-                       ("C-c C-d" (concat work-home-dir "Drafts/drafts.org"))
-                       ("C-M-m" (concat work-home-dir "MeetingNotes/meetings.org" t))
-                       ("M-*" (concat work-home-dir "~/jet/People/Feedback/feedback.org" t))))
-
-(defun favefile (keys filename open-fn)
-  (lexical-let ((fn filename) (opener open-fn))
-    (global-set-key (kbd keys) (lambda () (interactive) (funcall opener fn)))))
-
-(defun favefiles (faves)
-     (mapc
-      (lambda (l)
-	(let ((key-combo (car l))
-	      (filename (nth 1 l))
-        (readonly (nth 2 l)))
-	  (favefile key-combo filename (if readonly 'find-file-read-only 'find-file)))) faves))
-
-(favefiles favorite-files)
-
 ;;; Stolen from http://www.mycpu.org/emacs-productivity-setup/
 
 (require 'doom-themes)
