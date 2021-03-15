@@ -138,6 +138,7 @@
        (coach "coach.org")
        (gtd-inbox-file (concat org-directory inbox))
        (gtd-tickler-file (concat org-directory tickler))
+       (gtd-someday-file (concat org-directory someday))
        (gtd-tasks-file (concat org-directory tasks))
        (glossary-file (concat org-directory glossary))
        (coach-file (concat org-directory coach))
@@ -180,6 +181,9 @@
 				     ':empty-lines '1)
 			       (list '"c" '"Coaching Observation" 'entry
 				     (list 'file+headline coach-file '"Capture")
+				     '"** %?\n")
+			       (list '"w" '"Film and TV" 'entry
+				     (list 'file+headline gtd-someday-file '"Movies")
 				     '"** %?\n")))
   (setq org-default-notes-file gtd-inbox-file)
   (setq org-refile-targets 
