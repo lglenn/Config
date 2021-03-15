@@ -1,4 +1,4 @@
-;;; Org-mode
+;; Org-mode
 
 ;; So bookmarklets work
 (require 'org-protocol)
@@ -180,10 +180,7 @@
 				     ':empty-lines '1)
 			       (list '"c" '"Coaching Observation" 'entry
 				     (list 'file+headline coach-file '"Capture")
-				     '"** %?\n")
-			       (list '"T" '"Tickler" 'entry
-				     (list 'file+headline gtd-tickler-file '"Tickler")
-				     '"* TODO %^{Brief Description} %^g\n%?\nAdded: %U")))
+				     '"** %?\n")))
   (setq org-default-notes-file gtd-inbox-file)
   (setq org-refile-targets 
 	(let ((refile-target-files (list (cons nil '(:level . 1))
