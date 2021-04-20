@@ -163,6 +163,10 @@
 				     (list 'file+headline meeting-notes-file '"Meetings")
 				     '"* %^{Description}\n** Date: %^U\n** Attendees\n   - \n** Notes\n   - %? \n** To-Do's\n"
 				     ':empty-lines '1)
+			       (list '"o" '"One on One" 'entry
+				     (list 'file+headline meeting-notes-file '"Meetings")
+				     '"* 1:1: %^{Description}\n** Date: %^U\n** Agenda\n   - %? \n** Notes\n   -  \n** To-Do's\n"
+				     ':empty-lines '1)
 			       (list '"i" '"Interview" 'entry
 				     (list 'file+headline interviews-file '"Interviews")
 				     '"* %^{Candidate Name}\n** Date: %^U\n** Notes\n  - %?"
