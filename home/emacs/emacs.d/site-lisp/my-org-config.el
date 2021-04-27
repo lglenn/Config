@@ -112,7 +112,9 @@
    (point-at-eol)))
 
 (setq org-agenda-custom-commands
-      '(("n" "Agenda and all TODOs" ((agenda "") (alltodo "")))
+      '(("n" . "Prefix for agendas with todos")
+	("na" "Agenda and all TODOs" ((agenda "") (alltodo "")))
+	("nw" "Agenda and work-related TODOs" ((agenda "") (tags-todo "@work")))
         ("p" "Agenda for items with non-default priority (A or C)" ((agenda "") (alltodo "")) ((org-agenda-skip-function 'skip-no-priority)))
         ("x" agenda)
         ("y" agenda*)
