@@ -146,9 +146,7 @@
        (interviews-file (concat work-directory "People/Interviews/interviews.org"))
        (feedback-file (concat work-directory "People/Feedback/feedback.org"))
        (drafts-file (concat work-directory "Drafts/drafts.org")))
-  (setq org-agenda-files (list
-                          gtd-tickler-file
-                          gtd-tasks-file))
+  (setq org-agenda-files (list gtd-tasks-file))
   (setq org-capture-templates (list
 			       (list '"t" '"Todo [inbox]" 'entry
 				     (list 'file+headline gtd-inbox-file '"Inbox")
