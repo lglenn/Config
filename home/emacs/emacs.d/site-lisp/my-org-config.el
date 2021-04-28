@@ -117,7 +117,7 @@
 	("nw" "Agenda and work-related TODOs" ((agenda "") (tags-todo "@work")))
 	("np" "Personal agenda and TODOs"
 	 ((agenda "") (tags-todo "@home") (tags-todo "@laptop"))
-	 ((org-agenda-skip-function '(org-agenda-skip-subtree-if 'notregexp ":@\\(home\\|work\\):"))))
+	 ((org-agenda-skip-function '(org-agenda-skip-subtree-if 'notregexp ":@\\(home\\|laptop\\):"))))
         ("p" "Agenda for items with non-default priority (A or C)" ((agenda "") (alltodo "")) ((org-agenda-skip-function 'skip-no-priority)))
         ("x" agenda)
         ("y" agenda*)
