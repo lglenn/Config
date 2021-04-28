@@ -114,6 +114,7 @@
 (setq org-agenda-custom-commands
       '(("n" . "Prefix for agendas with todos")
 	("na" "Agenda and all TODOs" ((agenda "") (alltodo "")))
+	("nA" "Agenda and all TODO by tag" ((agenda "") (tags-todo "@work") (tags-todo "@laptop") (tags-todo "@home") (tags-todo "-@work-@home-@laptop")))
 	("nw" "Agenda and work-related TODOs" ((agenda "") (tags-todo "@work")))
 	("np" "Personal agenda and TODOs"
 	 ((agenda "") (tags-todo "@home") (tags-todo "@laptop"))
