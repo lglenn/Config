@@ -97,7 +97,7 @@
 (global-set-key (kbd "M-+") 'calc)
 
 ;;; Calendar
-(global-set-key (kbd "M-_") 'calendar)
+(global-set-key (kbd "M-=") 'calendar)
 
 ;;; Put backup files in their own space so they don't pollute their "home" directories.
 ;; Stolen from http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html and slightly modified.
