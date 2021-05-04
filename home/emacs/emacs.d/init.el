@@ -99,6 +99,20 @@
 ;;; Calendar
 (global-set-key (kbd "M-=") 'calendar)
 
+
+;; Kill the "other" buffer opened by, e.g., help.
+;; Stolen from https://www.emacswiki.org/emacs/KillingBuffers#h5o-5
+
+(defun close-and-kill-next-pane ()
+      "If there are multiple windows, then close the other pane and kill the buffer in it also."
+      (interactive)
+      (other-window 1)
+      (kill-this-buffer)
+      (if (not (one-window-p))
+          (delete-window)))
+
+(global-set-key (kbd "C-}") 'close-and-kill-next-pane)
+
 ;;; Put backup files in their own space so they don't pollute their "home" directories.
 ;; Stolen from http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html and slightly modified.
 
