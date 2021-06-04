@@ -12,6 +12,9 @@
 ;; Wrap lines
 (add-hook 'org-mode-hook (lambda () (visual-line-mode)))
 
+;; Use org journal (https://github.com/bastibe/org-journal)
+(require 'org-journal)
+
 ;; Pretty Bullets
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -148,6 +151,8 @@
        (interviews-file (concat work-directory "People/Interviews/interviews.org"))
        (feedback-file (concat work-directory "People/Feedback/feedback.org"))
        (drafts-file (concat work-directory "Drafts/drafts.org")))
+  (setq org-journal-dir (concat work-directory "Journal"))
+  (setq org-journal-file-type 'weekly)
   (setq org-agenda-files (list gtd-tasks-file))
   (setq org-capture-templates (list
 			       (list '"t" '"Todo [inbox]" 'entry
