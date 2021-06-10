@@ -152,7 +152,8 @@
        (interviews-file (concat work-directory "People/Interviews/interviews.org"))
        (feedback-file (concat work-directory "People/Feedback/feedback.org"))
        (drafts-file (concat work-directory "Drafts/drafts.org"))
-       (journal-file (concat personal-directory "Journal/journal.org")))
+       (journal-file (concat personal-directory "Journal/journal.org"))
+       (food-diary-file (concat personal-directory "Diet/food_diary.org")))
   (setq org-journal-dir (concat work-directory "Journal"))
   (setq org-journal-file-type 'weekly)
   (setq org-agenda-files (list gtd-tasks-file))
@@ -198,7 +199,10 @@
 				     '"** %?\n")
 			       (list '"j" '"Journal Entry" 'entry
 				     (list 'file+olp+datetree journal-file)
-				     '"** %<%k:%M %p>\n%?\n")))
+				     '"** %<%k:%M %p>\n%?\n")
+			       (list '"F" '"Food Diary" 'entry
+				     (list 'file+olp+datetree food-diary-file)
+				     '"** %^{Meal?}\n     - %?\n")))
 	
   (setq org-default-notes-file gtd-inbox-file)
   (setq org-refile-targets 
