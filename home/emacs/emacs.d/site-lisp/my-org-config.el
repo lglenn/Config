@@ -1,5 +1,8 @@
 ;; Org-mode
 
+;; Local variables
+(load-file "~/.emacs.d/local-org-config.el")
+
 ;; So bookmarklets work
 (require 'org-protocol)
 
@@ -133,24 +136,22 @@
 (setq org-log-into-drawer "LOGBOOK")
 
 ;; Ideas from https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html and modified
-(let* ((org-directory "~/gtd/")
-       (work-directory "~/walmart/")
-       (inbox "inbox.org")
+(let* ((inbox "inbox.org")
        (tickler "tickler.org")
        (someday "someday.org")
        (tasks "gtd.org")
        (glossary "glossary.org")
        (coach "coach.org")
-       (gtd-inbox-file (concat org-directory inbox))
-       (gtd-tickler-file (concat org-directory tickler))
-       (gtd-someday-file (concat org-directory someday))
-       (gtd-tasks-file (concat org-directory tasks))
-       (glossary-file (concat org-directory glossary))
-       (coach-file (concat org-directory coach))
+       (gtd-inbox-file (concat gtd-directory inbox))
+       (gtd-tickler-file (concat gtd-directory tickler))
+       (gtd-someday-file (concat gtd-directory someday))
+       (gtd-tasks-file (concat gtd-directory tasks))
+       (glossary-file (concat gtd-directory glossary))
+       (coach-file (concat gtd-directory coach))
        (meeting-notes-file (concat work-directory "MeetingNotes/meetings.org"))
        (interviews-file (concat work-directory "People/Interviews/interviews.org"))
        (feedback-file (concat work-directory "People/Feedback/feedback.org"))
-       (drafts-file (concat work-directory "Drafts/drafts.org")))
+       (drafts-file (concat work-directory "Drafts/drafts.org"))
   (setq org-journal-dir (concat work-directory "Journal"))
   (setq org-journal-file-type 'weekly)
   (setq org-agenda-files (list gtd-tasks-file))
@@ -206,7 +207,7 @@
 		 (let ((file (car e))
 		       (params (cdr e)))
 		   (cond ((stringp file)
-			  (cons (concat org-directory file) params))
+			  (cons (concat gtd-directory file) params))
 			 (t e))))))
           (mapcar prepend-directory-if-string refile-target-files))))
 
