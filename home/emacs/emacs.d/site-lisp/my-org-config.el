@@ -152,6 +152,7 @@
        (interviews-file (concat work-directory "People/Interviews/interviews.org"))
        (feedback-file (concat work-directory "People/Feedback/feedback.org"))
        (drafts-file (concat work-directory "Drafts/drafts.org"))
+       (journal-file (concat personal-directory "Journal/journal.org")))
   (setq org-journal-dir (concat work-directory "Journal"))
   (setq org-journal-file-type 'weekly)
   (setq org-agenda-files (list gtd-tasks-file))
@@ -194,7 +195,11 @@
 				     '"** %?\n")
 			       (list '"w" '"Film and TV" 'entry
 				     (list 'file+headline gtd-someday-file '"Movies")
-				     '"** %?\n")))
+				     '"** %?\n")
+			       (list '"j" '"Journal Entry" 'entry
+				     (list 'file+olp+datetree journal-file)
+				     '"** %<%k:%M %p>\n%?\n")))
+	
   (setq org-default-notes-file gtd-inbox-file)
   (setq org-refile-targets 
 	(let ((refile-target-files (list (cons nil '(:level . 1))
