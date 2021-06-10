@@ -199,7 +199,7 @@
 				     '"** %?\n")
 			       (list '"j" '"Journal Entry" 'entry
 				     (list 'file+olp+datetree journal-file)
-				     '"** %<%k:%M %p>\n%?\n")
+				     '"** %<%k:%M %p>\n%?\n" :tree-type 'week)
 			       (list '"F" '"Food Diary" 'entry
 				     (list 'file+olp+datetree food-diary-file)
 				     '"** %^{Meal?}\n     - %?\n")))
