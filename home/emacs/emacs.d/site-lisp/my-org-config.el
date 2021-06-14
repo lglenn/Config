@@ -200,9 +200,9 @@
 			       (list '"j" '"Journal Entry" 'entry
 				     (list 'file+olp+datetree journal-file)
 				     '"** %<%k:%M %p>\n%?\n" :tree-type 'week)
-			       (list '"F" '"Food Diary" 'entry
+			       (list '"F" '"Food Diary (to select a date, invoke org-capture (C-c c) with a C-1 prefix)" 'entry
 				     (list 'file+olp+datetree food-diary-file)
-				     '"** %^{Meal?}\n     - %?\n")))
+				     '"** %^{Meal?}\n   - %?\n")))
 	
   (setq org-default-notes-file gtd-inbox-file)
   (setq org-refile-targets 
