@@ -169,7 +169,7 @@
 				     '"* %^{Brief Description} [%] %^g\n** TODO %?\nAdded: %U")
 			       (list '"m" '"Meeting" 'entry
 				     (list 'file+headline meeting-notes-file '"Meetings")
-				     '"* %^{Description}\n** Date: %^U\n** Attendees\n   - \n** Notes\n   - %? \n** To-Do's\n"
+				     '"* %^{Description}\n** Date: %^U\n** Agenda\n   - \n** Attendees\n   - \n** Notes\n   - %? \n** To-Do's\n"
 				     ':empty-lines '1)
 			       (list '"o" '"One on One" 'entry
 				     (list 'file+headline meeting-notes-file '"Meetings")
