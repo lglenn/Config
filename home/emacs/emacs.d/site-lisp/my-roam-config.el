@@ -21,4 +21,13 @@
   ;; If using org-roam-protocol
   (require 'org-roam-protocol))
 
+(add-to-list 'display-buffer-alist
+             '("\\*org-roam\\*"
+               (display-buffer-in-side-window)
+               (side . right)
+               (slot . 0)
+               (window-width . 0.33)
+               (window-parameters . ((no-other-window . t)
+                                     (no-delete-other-windows . t)))))
+
 (provide 'my-roam-config)
