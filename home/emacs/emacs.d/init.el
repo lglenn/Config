@@ -86,6 +86,9 @@
 ;;; My org-mode config
 (require 'my-org-config)
 
+;;; org-roam config
+(require 'my-roam-config)
+
 ;;; Use abbrev mode for text
 (add-hook 'text-mode-hook (lambda () (abbrev-mode)))
 
