@@ -1,11 +1,14 @@
 ;;; Org-roam
 
+;; Local variables
+(load-file "~/.emacs.d/local-org-config.el")
+
 (use-package org-roam
   :ensure t
   :init
   (setq org-roam-v2-ack t)
   :custom
-  (org-roam-directory (file-truename "~/Roam/"))
+  (org-roam-directory (file-truename roam-directory))
   (org-roam-completion-everywhere t)
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
