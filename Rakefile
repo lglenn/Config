@@ -53,6 +53,7 @@ ipython_deps = []
 end
 
 emacs_deps = make_copy_dir_task('./home/emacs/emacs.d/*.el', "#{HOME}/.emacs.d", :emacsdir)
+emacs_deps += make_copy_dir_task('./home/emacs/emacs.d/*.sample', "#{HOME}/.emacs.d", :emacsdir)
 emacs_deps += make_copy_dir_task('./home/emacs/emacs.d/site-lisp/*.el', "#{HOME}/.emacs.d/site-lisp", :emacsdir)
 
 task :default => [:zsh, :bash, :gnu_emacs, :git, :screen, :tmux, :ipython]
