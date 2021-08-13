@@ -87,6 +87,10 @@
   (map! "M-x" 'counsel-M-x)
   (map! "C-x C-f" 'counsel-find-file))
 
+(use-package! all-the-icons-ivy
+  :init
+  (all-the-icons-ivy-setup))
+
 (provide 'config)
 
 ;;; config.el ends here

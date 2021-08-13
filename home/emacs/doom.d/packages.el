@@ -51,3 +51,8 @@
 
 (package! org-roam)
 (package! org-bullets)
+(package! all-the-icons-ivy)
+
+(provide 'packages)
+
+;;; packages.el ends here
