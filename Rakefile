@@ -52,20 +52,13 @@ ipython_deps = []
     ipython_deps << task_symbol
 end
 
-emacs_deps = make_copy_dir_task('./home/emacs/doom.d/*.el', "#{HOME}/.doom.d", :emacsdir)
-emacs_deps = make_copy_dir_task('./home/emacs/doom.d/site-lisp/*.el', "#{HOME}/.doom.d/site-lisp/", :emacsdir)
-emacs_deps += make_copy_dir_task('./home/emacs/doom.d/*.sample', "#{HOME}/.doom.d", :emacsdir)
-
-task :default => [:zsh, :bash, :gnu_emacs, :git, :screen, :tmux, :ipython]
+task :default => [:zsh, :bash, :git, :screen, :tmux, :ipython]
 
 desc "zsh config"
 task :zsh => zsh_deps
 
 desc "bash config"
 task :bash => bash_deps
-
-desc "emacs config"
-task :gnu_emacs => emacs_deps
 
 desc "git config"
 task :git => git_deps
