@@ -1,7 +1,7 @@
 ;;; Org-roam
 
 ;; Local variables
-(load-file "~/.emacs.d/local-org-config.el")
+(load-file "~/.doom.d/local-org-config.el")
 
 (use-package org-roam
   :ensure t
