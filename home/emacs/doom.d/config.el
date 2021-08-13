@@ -71,11 +71,7 @@
 (map! "M-=" 'calendar)
 
 ;;; Org
-
-(load! "local-org-config")
-
-(after! org
-  (load! "my-org-config"))
+(load! "my-org-config")
 
 (after! org-roam
   (load! "my-roam-config"))
