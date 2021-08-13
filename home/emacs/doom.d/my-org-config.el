@@ -13,14 +13,14 @@
 (setq org-agenda-include-diary t)
 
 ;; Use abbrev-mode
-(add-hook 'org-mode-hook (lambda () (abbrev-mode)))
+(add-hook! org-mode 'abbrev-mode)
 
 ;; Wrap lines
-(add-hook 'org-mode-hook (lambda () (visual-line-mode)))
+(add-hook! org-mode 'visual-line-mode)
 
 ;; Pretty Bullets
 (require 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(add-hook! org-mode (org-bullets-mode 1))
 
 ;; Various beauty tricks, including nice fonts and unicode bullets
 ;; Stolen from https://zzamboni.org/post/beautifying-org-mode-in-emacs
@@ -29,13 +29,13 @@
 
 (setq org-hide-emphasis-markers t)
 
-(font-lock-add-keywords 'org-mode
-                        '(("^ *\\([-]\\) "
-                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+;;(font-lock-add-keywords 'org-mode
+  ;;                      '(("^ *\\([-]\\) "
+    ;;                       (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cc" 'org-capture)
+(map! "\C-cl" 'org-store-link)
+(map! "\C-ca" 'org-agenda)
+(map! "\C-cc" 'org-capture)
 
 (setq org-tag-alist '(
                       ("@work" . ?w)
