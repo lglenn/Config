@@ -91,6 +91,8 @@
   :init
   (all-the-icons-ivy-setup))
 
+(add-hook! text-mode 'abbrev-mode)
+
 (provide 'config)
 
 ;;; config.el ends here
