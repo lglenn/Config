@@ -7,6 +7,8 @@
 
 (after! org-roam
 
+  (load! "local-org-config" doom-private-dir)
+
   (setq org-roam-directory (file-truename roam-directory))
 
   (setq org-roam-completion-everywhere t)

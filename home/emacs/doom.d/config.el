@@ -71,8 +71,8 @@
 (map! "M-=" 'calendar)
 
 ;;; Org
-(load! "my-org-config")
-(load! "my-roam-config")
+(load! "site-lisp/my-org-config")
+(load! "site-lisp/my-roam-config")
 
 (after! ivy
   (setq ivy-use-virtual-buffers t)

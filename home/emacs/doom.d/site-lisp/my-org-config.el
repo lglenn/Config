@@ -5,7 +5,7 @@
 
 (after! org
 
-  (load! "local-org-config")
+  (load! "local-org-config" doom-private-dir)
 
   ;; So bookmarklets work
   (require 'org-protocol)
