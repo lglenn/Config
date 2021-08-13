@@ -85,6 +85,7 @@
 
 ;;; My org-mode config
 (require 'my-org-config)
+(require 'my-org-faces)
 
 ;;; org-roam config
 (require 'my-roam-config)

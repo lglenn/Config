@@ -27,11 +27,12 @@
 
 (setq org-hide-emphasis-markers t)
 
+(setq org-hide-emphasis-markers t)
+
 (font-lock-add-keywords 'org-mode
                         '(("^ *\\([-]\\) "
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
-(setq org-hide-emphasis-markers t)
 
 (let* ((variable-tuple
         (cond ((x-list-fonts "Source Sans Pro") '(:font "Source Sans Pro"))
