@@ -72,9 +72,7 @@
 
 ;;; Org
 (load! "my-org-config")
-
-(after! org-roam
-  (load! "my-roam-config"))
+(load! "my-roam-config")
 
 (after! ivy
   (setq ivy-use-virtual-buffers t)
