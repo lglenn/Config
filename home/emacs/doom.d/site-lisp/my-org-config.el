@@ -24,8 +24,7 @@
   (add-hook! org-mode 'visual-line-mode)
 
   ;; Pretty Bullets
-  (require 'org-bullets)
-  (add-hook! org-mode (org-bullets-mode 1))
+  (setq org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿"))
 
   ;; Hide text formatters such as / * etc
   (setq org-hide-emphasis-markers t)
