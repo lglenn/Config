@@ -79,3 +79,14 @@
 
 (after! org-roam
   (load! "my-roam-config"))
+
+(after! ivy
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) ")
+  (map! "C-s" 'swiper)
+  (map! "M-x" 'counsel-M-x)
+  (map! "C-x C-f" 'counsel-find-file))
+
+(provide 'config)
+
+;;; config.el ends here
