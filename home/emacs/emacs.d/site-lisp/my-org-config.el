@@ -1,4 +1,7 @@
-;; Org-mode
+;;; my-org-config --- Tweaks for org-mode
+;;;
+
+;;; Code:
 
 ;; Local variables
 (load-file "~/.emacs.d/local-org-config.el")
@@ -14,9 +17,6 @@
 
 ;; Wrap lines
 (add-hook 'org-mode-hook (lambda () (visual-line-mode)))
-
-;; Use org journal (https://github.com/bastibe/org-journal)
-(require 'org-journal)
 
 ;; Pretty Bullets
 (require 'org-bullets)
@@ -213,9 +213,9 @@
 			       (list '"F" '"Food Diary (to select a date, invoke org-capture (C-c c) with a C-1 prefix)" 'entry
 				     (list 'file+olp+datetree food-diary-file)
 				     '"** %^{Meal?}\n   - %?\n")))
-	
+
   (setq org-default-notes-file gtd-inbox-file)
-  (setq org-refile-targets 
+  (setq org-refile-targets
 	(let ((refile-target-files (list (cons nil '(:level . 1))
 					 (cons tasks '(:maxlevel . 3))
 					 (cons someday '(:level . 1))
