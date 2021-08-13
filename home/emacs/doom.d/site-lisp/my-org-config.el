@@ -7,9 +7,6 @@
 
   (load! "local-org-config" doom-private-dir)
 
-  ;; So bookmarklets work
-  (require 'org-protocol)
-
   (map! "\C-cl" 'org-store-link)
   (map! "\C-ca" 'org-agenda)
   (map! "\C-cc" 'org-capture)
