@@ -175,23 +175,6 @@ function table() {
 # OS-Specific functionality.
 case `uname` in
     Darwin)
-        if [ -f "$HOME/.java_setup" ]
-        then
-            . $HOME/.java_setup
-        fi
-        # Run Boxen setup if this is a Boxen box...
-        if [ -f "/opt/boxen/env.sh" ]
-        then
-            source /opt/boxen/env.sh
-        fi
-        # If docker-machine is installed, create a function dockerenv
-        # which will configure your environment for docker.
-        if [ -x `which docker-machine` ]
-        then
-          function dockerenv() {
-            eval "$(docker-machine env)";
-          }
-        fi
         ;;
     Linux)
         ;;
