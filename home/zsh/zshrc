@@ -115,6 +115,9 @@ alias zsh='exec zsh'
 alias tat='tmux attach'
 alias tats='tmux attach -t'
 alias tl='tmux list-sessions'
+alias p8='ping 8.8.8.8'
+alias pg='ping google.com'
+alias p10='ping 10.9.8.1'
 
 #
 # prompt
