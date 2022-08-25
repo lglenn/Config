@@ -1,3 +1,6 @@
 [submodule "home/tmux/tmux/plugins/tpm"]
 	path = home/tmux/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "home/vale/vale-boilerplate"]
+	path = home/vale/vale-boilerplate
+	url = https://github.com/errata-ai/vale-boilerplate.git
